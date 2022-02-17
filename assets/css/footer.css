@@ -1,0 +1,60 @@
+/* ==========================================================================
+    Footer Section Stylesheet
+   ========================================================================== */
+
+.section.footer {
+	padding-top: 80px;
+	padding-bottom: 50px;
+	background-color: #000;
+}
+
+.footer-container {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 940px;
+}
+
+.footer-container:before,
+.footer-container:after {
+	display: table;
+	grid-column-start: 1;
+	grid-row-start: 1;
+	grid-column-end: 2;
+	grid-row-end: 2;
+}
+
+.footer-img {
+	color: #fffcf5;
+}
+
+.social-link {
+	margin-right: 11px;
+	opacity: 1;
+	-webkit-transition: opacity 200ms ease;
+	transition: opacity 200ms ease;
+}
+
+.social-link:hover {
+	opacity: 0.74;
+}
+
+.footer-tag {
+	margin-top: 20px;
+	color: #fffcf5;
+}
+
+@media screen and (max-width: 991px) {
+	.footer-container {
+		max-width: 728px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 479px) {
+	.footer-container {
+		max-width: none;
+	}
+}

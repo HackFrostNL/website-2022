@@ -1,0 +1,48 @@
+/* ==========================================================================
+    Countdown Timer Stylesheet
+   ========================================================================== */
+.countdown-row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	border-top: 1px solid rgba(255, 252, 245, 0.2);
+	border-bottom: 1px solid rgba(255, 252, 245, 0.2);
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.countdown-block {
+	display: inline-block;
+	width: 130px;
+	margin: 5px 10px 30px 10px;
+}
+
+.countdown-time {
+	font-family: Montserrat, sans-serif;
+	color: #f2f4f7;
+	font-size: 64px;
+	line-height: 110px;
+}
+
+.countdown-info {
+	font-family: Montserrat, sans-serif;
+	color: #f2f4f7;
+	font-size: 18px;
+}
+
+@media screen and (max-width: 991px) {
+	.countdown-row {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 479px) {
+}
