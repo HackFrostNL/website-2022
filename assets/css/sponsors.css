@@ -43,8 +43,8 @@
 }
 
 .diamond.vision33 {
-	height: 300px;
-	width: auto;
+	height: auto;
+	width: 300px;
 }
 
 .img {
@@ -116,8 +116,8 @@
 	}
 
 	.diamond.vision33 {
-		height: 200px;
-		width: auto;
+		height: auto;
+		width: 200px;
 	}
 
 	.silver {
