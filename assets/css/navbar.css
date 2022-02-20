@@ -47,24 +47,6 @@
 	text-align: center;
 }
 
-.nav-logo.nl-cream {
-	position: absolute;
-	z-index: 2;
-	margin-right: 0px;
-	-webkit-transition: opacity 200ms ease;
-	transition: opacity 200ms ease;
-}
-
-.nav-logo.nl-cream:hover {
-	opacity: 0;
-}
-
-.nav-logo.nl-yellow {
-	position: fixed;
-	z-index: 1;
-	margin-right: 0px;
-}
-
 .nav-logo-link {
 	width: 12%;
 	position: static;
@@ -95,6 +77,35 @@
 	text-align: center;
 }
 
+.nav-logo.nl-cream {
+	position: absolute;
+	z-index: 2;
+	margin-right: 0px;
+	-webkit-transition: opacity 200ms ease;
+	transition: opacity 200ms ease;
+}
+
+.nav-logo.nl-cream:hover {
+	opacity: 0;
+}
+
+.nav-logo.nl-cream:hover ~ .home-text {
+	opacity: 100;
+	-webkit-transition: opacity 200ms ease;
+	transition: opacity 200ms ease;
+}
+.nav-logo.nl-cream:not(:hover) ~ .home-text {
+	opacity: 0;
+	-webkit-transition: opacity 200ms ease;
+	transition: opacity 200ms ease;
+}
+
+.nav-logo.nl-yellow {
+	position: fixed;
+	z-index: 1;
+	margin-right: 0px;
+}
+
 .home-text {
 	display: block;
 	-webkit-box-align: center;
@@ -107,6 +118,7 @@
 	font-size: 16px;
 	font-weight: 500;
 	text-transform: uppercase;
+	opacity: 0;
 }
 
 .nav-menu {
@@ -135,6 +147,23 @@
 	font-family: 'Open Sans', sans-serif;
 	color: transparent;
 	line-height: 20px;
+}
+
+.nav-link {
+	padding-right: 20px;
+	padding-left: 20px;
+	-webkit-transition: all 200ms ease;
+	transition: all 200ms ease;
+	color: #fffcf5;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.nav-link:hover {
+	color: #ffda4a;
+	font-weight: 600;
 }
 
 .button.nav-button {
@@ -198,6 +227,25 @@
 	width: 7px;
 }
 
+.nav-reg {
+	display: none;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #ffda4a;
+	-webkit-transition: all 200ms ease;
+	transition: all 200ms ease;
+	color: #272727;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.nav-reg:hover {
+	color: #ffda4a;
+	font-weight: 600;
+}
+
 @media screen and (max-width: 991px) {
 	.nav-logo-link {
 		margin-top: 22px;
@@ -213,6 +261,19 @@
 
 	.home-text {
 		opacity: 1;
+	}
+
+	.nav-reg {
+		display: block;
+		margin: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid rgba(255, 252, 245, 0.2);
+		font-size: 20px;
+	}
+
+	.nav-reg:hover {
+		color: #272727;
 	}
 }
 

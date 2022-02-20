@@ -1,0 +1,58 @@
+/* ==========================================================================
+    Team Page Stylesheet
+   ========================================================================== */
+
+.team {
+	text-align: center;
+}
+
+.team-img {
+	margin-bottom: 20px;
+	position: static;
+	top: auto;
+	right: auto;
+	display: inline-block;
+	overflow: visible;
+	width: 200px;
+	float: none;
+	text-align: left;
+	mix-blend-mode: normal;
+	transition: all 0.5s ease;
+	border-radius: 50%;
+}
+
+.team-img:hover,
+.team-name:hover ~ .team-img {
+	transform: scale(1.1);
+}
+
+.team-name {
+	font-size: 32px;
+	line-height: 36px;
+	transition: all 200ms ease;
+}
+
+.team-name:hover,
+.team-img:hover ~ .team-name {
+	color: #ffda4a;
+}
+
+.team-role {
+	margin-top: 8px;
+	margin-bottom: 0px;
+	font-family: 'Open Sans', sans-serif;
+	color: #a5a7ad;
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 300;
+	text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 479px) {
+}
