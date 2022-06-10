@@ -247,6 +247,9 @@
 }
 
 @media screen and (max-width: 991px) {
+	.navbar {
+		min-height: 71px;
+	}
 	.nav-logo-link {
 		margin-top: 22px;
 		-webkit-box-pack: start;

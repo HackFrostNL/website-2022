@@ -60,7 +60,7 @@
 	align-items: flex-end;
 }
 
-.tricolore {
+#quadcolor {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -75,19 +75,36 @@
 	margin-right: 10px;
 	margin-left: 10px;
 	border-radius: 50%;
+	animation: quadcolor 1.3s linear infinite;
+}
+
+.dot.red {
 	background-color: #fa524e;
 }
 
 .dot.blue {
 	background-color: #79d7ff;
+	animation-delay: 0.325s;
 }
 
 .dot.yellow {
 	background-color: #ffda4a;
+	animation-delay: 0.65s;
 }
 
-.dot.red {
-	background-color: #fa524e;
+.dot.green {
+	background-color: #7ed957;
+	animation-delay: 0.975s;
+}
+
+@keyframes quadcolor {
+	0%, 60%, 100% {
+		transform: initial;
+	}
+
+	30% {
+		transform: translateY(-15px);
+	}
 }
 
 .event-date {
