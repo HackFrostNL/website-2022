@@ -14,6 +14,8 @@
 	display: inline-block;
 	overflow: visible;
 	width: 200px;
+	height: 200px;
+	object-fit: cover;
 	float: none;
 	text-align: left;
 	mix-blend-mode: normal;
