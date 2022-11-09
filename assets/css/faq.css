@@ -92,3 +92,14 @@
 
 @media screen and (max-width: 479px) {
 }
+
+/* ==========================================================================
+    FAQ Accordion
+   ========================================================================== */
+
+.panel {
+    padding: 0 18px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }

@@ -38,7 +38,7 @@ var offset = now.getTimezoneOffset() - 150;
 /* SET DATE TO SPECIFIC DAY IN THE FUTURE
  * MONTHS go from 0 to 11: January is 0, February is 1, and so on
  */
-var then = new Date(2022, 01, 18, 18, 00, 0, 0);
+var then = new Date(2023, 01, 17, 18, 00, 0, 0);
 
 // COUNT DOWN TO 3 DAYS IN THE FUTURE (259,200,000 = 1000 * 60 * 60 * 24 * 3)
 // var then = now.getTime() + 259200000;
