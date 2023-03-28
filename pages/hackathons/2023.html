@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Hack Frost NL | Home Page</title>
+		<title>Hack Frost NL | Hackathon 2023</title>
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
 		<link
@@ -33,7 +33,7 @@
 		>
 			<div class="nav-container clearfix">
 				<div class="div-nav-logo">
-					<a href="index.html" aria-current="page" class="nav-logo-link">
+					<a href="/index.html" aria-current="page" class="nav-logo-link">
 						<div class="nav-logo nl-cream">
 							<img
 								src="/assets/images/icons/nl-only-cream.svg"
@@ -57,12 +57,12 @@
 				</div>
 				<div class="nav-wrapper clearfix">
 					<nav role="navigation" class="nav-menu">
-						<a href="#learn-more" class="nav-link">About</a>
+						<a href="/index.html#learn-more" class="nav-link">About</a>
 						<div class="nav-dropdown">
 							<span>Hackathon</span>
 							<div class="nav-dropdown-content">
-								<a class="nav-link" href="/pages/hackathons/2023.html">2023</a>
-								<a class="nav-link" href="/pages/hackathons/2022.html">2022</a>
+								<a class="nav-link" href="2023.html">2023</a>
+								<a class="nav-link" href="2022.html">2022</a>
 							</div>
 						</div>
 						<a href="/pages/team.html" class="nav-link">Our Team</a>
@@ -88,8 +88,7 @@
 			<div class="banner">
 				<div class="wrap">
 					<div class="wrap-title">
-						<h1 class="huge-heading">Hack Frost NL
-						</h1>
+						<h1 class="huge-heading">Hack Frost 3.0</h1>
 					</div>
 					<div id="quadcolor">
 						<div class="snowflake red"></div>
@@ -100,100 +99,90 @@
 					<div>
 						<h1 class="event-date">March 31 - April 2</h1>
 						<h1 class="event-year">2023</h1>
-					</div>
-
-					<div class="countdown-row">
-						<div class="countdown-block">
-							<div id="days" class="countdown-time">00</div>
-							<div class="countdown-info">days</div>
-						</div>
-						<div class="countdown-block">
-							<div id="hours" class="countdown-time">00</div>
-							<div class="countdown-info">hours</div>
-						</div>
-						<div class="countdown-block">
-							<div id="minutes" class="countdown-time">00</div>
-							<div class="countdown-info">minutes</div>
-						</div>
-						<div class="countdown-block">
-							<div id="seconds" class="countdown-time">00</div>
-							<div class="countdown-info">seconds</div>
-						</div>
-					</div>
-					
-				</div>
-				<div class="div-home-button">
-					<a
-						href="https://www.eventbrite.ca/e/hack-frost-nl-30-new-date-tickets-556579683817?aff=website"
-						class="button home-button discord"
-						>Register Now
-					</a>
+					</div>					
 				</div>
 			</div>
 		</div>
-
-		<div id="learn-more" class="section info-black">
-			<div class="div-vertical">
-				<div class="section-info">
-					<h2 class="blue">Feeling the chill?</h2>
-					<p class="paragraph black-bg">
-						Hack Frost NL is a student-led initiative at Memorial University of
-						Newfoundland. Founded in 2020, we organize hackathons with the goal
-						of bridging the gap between the classroom and the workplace. Head over
-						to <a href="https://hack-frost-nl-2-0.devpost.com/project-gallery">Devpost</a>
-						to check out the 2nd hackathon's projects.
-					</p>
-					<a href="pages/team.html" class="more-info-link blue-text"
-						>More about us   ❯ </a
-					>
-				</div>
-				<div class="section-grid">
-					<div class="columns w-row">
-						<div class="column w-col w-col-4">
+		<div class="section info-black">
+			<div class="section-grid">
+				<div class="columns w-row flex-center">
+					<div class="column w-col w-col-4">
+						<div class="ht-div">
 							<img
-								src="/assets/images/icons/icons8-connect.svg"
+								src="/assets/images/icons/icons8-google-code.svg"
 								
+								alt=""
 								class="chill-img"
 							/>
-							<h4>make friends.</h4>
+							<a href="#" class="ht-sub" disabled>challenges - coming soon</a>
 							<div class="text-block-4">
-								Get a quick overview of our events and socials - and form new
-								friendships when you join us!
-							</div>
-						</div>
-						<div class="column w-col w-col-4">
-							<img
-								src="/assets/images/icons/icons8-binoculars.svg"
-								
-								class="chill-img"
-							/>
-							<h4>learn new skills.</h4>
-							<div class="text-block-4">
-								Get to know a wide variety of skills ranging from tech, design,
-								and the professional industry!
-							</div>
-						</div>
-						<div class="column w-col w-col-4">
-							<img
-								src="/assets/images/icons/icons8-idea.svg"
-								
-								class="chill-img"
-							/>
-							<h4>express your ideas.</h4>
-							<div class="text-block-4">
-								Work together to brainstorm ideas for exciting challenges, even
-								if you had no prior coding experience!
+								Check out the challenge prompts for Hack Forst NL 2023
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- To Do: Fix FAQ Accordion -->
 		<div class="section info-grey">
 			<div class="div-vertical">
-				<h2 class="red">Frequently Asked Questions</h2>
+				<h2 class="white">Schedule</h2>
+				<div class="tab">
+					<button class="tab-link" data-tab-group="schedule" id="day1-tab" onclick="openTab(event, 'schedule', 'day1')">Day 1</button>
+					<button class="tab-link" data-tab-group="schedule" onclick="openTab(event, 'schedule', 'day2')">Day 2</button>
+					<button class="tab-link" data-tab-group="schedule" onclick="openTab(event, 'schedule', 'day3')">Day 3</button>
+				</div>
+				<div data-tab-group="schedule" data-tab-name="day1" class="tab-content">
+					<img src="/assets/images/hackathons/2023/Schedule_Friday.png" width="600px" alt="Friday Schedule" />
+				</div>
+				<div data-tab-group="schedule" data-tab-name="day2" class="tab-content">
+					<img src="/assets/images/hackathons/2023/Schedule_Saturday.png" width="600px" alt="Saturday Schedule" />
+				</div>
+				<div data-tab-group="schedule" data-tab-name="day3" class="tab-content">
+					<img src="/assets/images/hackathons/2023/Schedule_Sunday.png" width="600px" alt="Sunday Schedule" />
+				</div>
+			</div>
+		</div>
+		<div class="section info-black">
+			<div class="div-vertical">
+				<h2 class="red">Maps</h2>
+				<div class="tab">
+					<button class="tab-link" data-tab-group="buildings" onclick="openTab(event, 'buildings', 'science-1')">Science (Level 1)</button>
+					<button class="tab-link" data-tab-group="buildings" onclick="openTab(event, 'buildings', 'science-2')">Science (Level 2)</button>
+					<button class="tab-link" data-tab-group="buildings" onclick="openTab(event, 'buildings', 'science-3')">Science (Level 3)</button>
+					<button class="tab-link" data-tab-group="buildings" onclick="openTab(event, 'buildings', 'science-4')">Science (Level 4)</button>
+					<button class="tab-link" data-tab-group="buildings" onclick="openTab(event, 'buildings', 'bruneau-1')">Bruneau Center (Level 1)</button>
+					<button class="tab-link" data-tab-group="buildings" onclick="openTab(event, 'buildings', 'bruneau-2')">Bruneau Center (Level 2)</button>
+
+				</div>
+				<div data-tab-group="buildings" data-tab-name="science-1" class="tab-content">
+					<object data="/assets/misc/mun-science-plan-1.pdf#navpanes=0&messages=0&view=FitH" style="width: 95%; height: 50vh;"></object>
+					<a href="/assets/misc/mun-science-plan-1.pdf#navpanes=0&messages=0&view=FitH" class="more-info-link">Direct Link</a>
+				</div>
+				<div data-tab-group="buildings" data-tab-name="science-2" class="tab-content">
+					<object data="/assets/misc/mun-science-plan-2.pdf#navpanes=0&messages=0&view=FitH" style="width: 95%; height: 50vh;"></object>
+					<a href="/assets/misc/mun-science-plan-2.pdf#navpanes=0&messages=0&view=FitH" class="more-info-link">Direct Link</a>
+				</div>
+				<div data-tab-group="buildings" data-tab-name="science-3" class="tab-content">
+					<object data="/assets/misc/mun-science-plan-3.pdf#navpanes=0&messages=0&view=FitH" style="width: 95%; height: 50vh;"></object>
+					<a href="/assets/misc/mun-science-plan-3.pdf#navpanes=0&messages=0&view=FitH" class="more-info-link">Direct Link</a>
+				</div>
+				<div data-tab-group="buildings" data-tab-name="science-4" class="tab-content">
+					<object data="/assets/misc/mun-science-plan-4.pdf#navpanes=0&messages=0&view=FitH" style="width: 95%; height: 50vh;"></object>
+					<a href="/assets/misc/mun-science-plan-4.pdf#navpanes=0&messages=0&view=FitH" class="more-info-link">Direct Link</a>
+				</div>
+				<div data-tab-group="buildings" data-tab-name="bruneau-1" class="tab-content">
+					<object data="/assets/misc/mun-bruneau-plan-1.pdf#navpanes=0&messages=0&view=FitH" style="width: 95%; height: 50vh;"></object>
+					<a href="/assets/misc/mun-bruneau-plan-1.pdf#navpanes=0&messages=0&view=FitH" class="more-info-link">Direct Link</a>
+				</div>
+				<div data-tab-group="buildings" data-tab-name="bruneau-2" class="tab-content">
+					<object data="/assets/misc/mun-bruneau-plan-2.pdf#navpanes=0&messages=0&view=FitH" style="width: 95%; height: 50vh;"></object>
+					<a href="/assets/misc/mun-bruneau-plan-2.pdf#navpanes=0&messages=0&view=FitH" class="more-info-link">Direct Link</a>
+				</div>
+			</div>
+		</div>
+		<div class="section info-grey">
+			<div class="div-vertical">
+				<h2 class="white">Frequently Asked Questions</h2>
 				<div class="w-row">
 					<div>
 						<div class="faq-wrap">
@@ -366,7 +355,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="section info-black">
 			<div class="div-vertical">
 				<h2 class="sponsors">Our 2023 Sponsors</h2>
@@ -462,7 +450,6 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- Footer -->
 		<footer id="Footer" class="section footer grey">
 			<div class="footer-container">
@@ -487,7 +474,7 @@
 						target="_blank"
 						class="social-link"
 						><img
-							src="./assets/images/icons/icons8-facebook-f.svg"
+							src="/assets/images/icons/icons8-facebook-f.svg"
 							class="footer-img"
 						/>
 					</a>
@@ -536,6 +523,13 @@
 		<!-- jQuery v3.5.1 -->
 		<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/scripts.js"></script>
-        <script type="text/javascript" src="/assets/js/accordion.js"></script>
+		<script type="text/javascript" src="/assets/js/accordion.js"></script>
+		<script type="text/javascript" src="/assets/js/tabs.js"></script>
+		<script type="text/javascript">
+			// Open first tab by default
+			window.addEventListener("load", () => {
+				document.getElementById("day1-tab").click();
+			})
+		</script>
 	</body>
 </html>
