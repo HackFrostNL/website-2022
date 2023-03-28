@@ -5,7 +5,14 @@
 .section.footer {
 	padding-top: 80px;
 	padding-bottom: 50px;
+}
+
+.section.footer.black {
 	background-color: #000;
+}
+
+.section.footer.grey {
+	background-color: #272727;
 }
 
 .footer-container {
