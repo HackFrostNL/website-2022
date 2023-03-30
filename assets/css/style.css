@@ -147,6 +147,22 @@ a {
 	text-decoration: none;
 }
 
+table#judging-criteria {
+	font-size: 1.2rem;
+}
+
+table#judging-criteria  > tbody > tr > td, table#judging-criteria > thead > tr > th {
+	padding: 5px 15px;
+}
+
+table#judging-criteria > thead > tr > th:first-of-type {
+	text-align: left;
+}
+
+table#judging-criteria > tbody > tr > td:last-of-type {
+	text-align: right;
+}
+
 /* ==========================================================================
 	Buttons
    ========================================================================== */
@@ -807,6 +823,31 @@ a {
 	.tab {
 		flex-direction: column;
 	}
+
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 2px solid #ccc; }
+	
+	td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	table#judging-criteria > tbody > tr > td:last-of-type {
+		text-align: left;
+	}
+	
 }
 
 @media screen and (max-width: 479px) {
