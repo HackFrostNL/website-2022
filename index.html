@@ -31,7 +31,7 @@
 			role="banner"
 			class="navbar"
 		>
-			<div class="nav-container clearfix">
+			<div class="nav-container">
 				<div class="div-nav-logo">
 					<a href="index.html" aria-current="page" class="nav-logo-link">
 						<div class="nav-logo nl-cream">
@@ -55,8 +55,11 @@
 						</div>
 					</a>
 				</div>
-				<div class="nav-wrapper clearfix">
-					<nav role="navigation" class="nav-menu">
+				<div class="nav-wrapper">
+					<nav role="navigation" class="nav-menu" id="nav-main">
+						<a href="#" class="icon icon-nav" onclick="hamburger()">
+							<i class="hamburger-btn"></i>
+						</a>
 						<a href="#learn-more" class="nav-link">About</a>
 						<div class="nav-dropdown">
 							<span>Hackathon</span>
@@ -75,11 +78,6 @@
 							<span>Discord</span>	
 						</a>
 					</nav>
-
-					<!-- To Do: Fix hamburger button -->
-					<div class="menu-button w-nav-button">
-						<div class="w-icon-nav-menu"></div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -453,14 +451,6 @@
 							class="silver img"
 						/>
 					</a>
-					<a href="https://www.opasmobile.com" class="silver">
-						<img
-							src="/assets/images/sponsors/opas.png"
-							
-							alt="Opas Mobile"
-							class="silver img"
-						/>
-					</a>	
 				</div>
 				<h3>Partners</h3>
 				<div class="row">
@@ -558,5 +548,6 @@
 		<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/scripts.js"></script>
         <script type="text/javascript" src="/assets/js/accordion.js"></script>
+		<script type="text/javascript" src="/assets/js/nav.js"></script>
 	</body>
 </html>

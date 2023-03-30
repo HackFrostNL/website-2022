@@ -31,9 +31,9 @@
 			role="banner"
 			class="navbar"
 		>
-			<div class="nav-container clearfix">
+			<div class="nav-container">
 				<div class="div-nav-logo">
-					<a href="/index.html" aria-current="page" class="nav-logo-link">
+					<a href="index.html" aria-current="page" class="nav-logo-link">
 						<div class="nav-logo nl-cream">
 							<img
 								src="/assets/images/icons/nl-only-cream.svg"
@@ -55,14 +55,17 @@
 						</div>
 					</a>
 				</div>
-				<div class="nav-wrapper clearfix">
-					<nav role="navigation" class="nav-menu">
+				<div class="nav-wrapper">
+					<nav role="navigation" class="nav-menu" id="nav-main">
+						<a href="#" class="icon icon-nav" onclick="hamburger()">
+							<i class="hamburger-btn"></i>
+						</a>
 						<a href="/index.html#learn-more" class="nav-link">About</a>
 						<div class="nav-dropdown">
 							<span>Hackathon</span>
 							<div class="nav-dropdown-content">
-								<a class="nav-link" href="2023.html">2023</a>
-								<a class="nav-link" href="2022.html">2022</a>
+								<a class="nav-link" href="/pages/hackathons/2023.html">2023</a>
+								<a class="nav-link" href="/pages/hackathons/2022.html">2022</a>
 							</div>
 						</div>
 						<a href="/pages/team.html" class="nav-link">Our Team</a>
@@ -75,15 +78,9 @@
 							<span>Discord</span>	
 						</a>
 					</nav>
-
-					<!-- To Do: Fix hamburger button -->
-					<div class="menu-button w-nav-button">
-						<div class="w-icon-nav-menu"></div>
-					</div>
 				</div>
 			</div>
 		</div>
-
 		<div id="home" class="section hero">
 			<div class="banner">
 				<div class="wrap">
@@ -491,5 +488,6 @@
 		<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/scripts.js"></script>
         <script type="text/javascript" src="/assets/js/accordion.js"></script>
+		<script type="text/javascript" src="/assets/js/nav.js"></script>
 	</body>
 </html>
