@@ -15,66 +15,64 @@
 
 <body class="body">
 	<div
-	data-collapse="medium"
-	data-animation="default"
-	data-duration="400"
-	data-easing="ease"
-	data-easing2="ease"
-	role="banner"
-	class="navbar"
->
-	<div class="nav-container clearfix">
-		<div class="div-nav-logo">
-			<a href="index.html" aria-current="page" class="nav-logo-link">
-				<div class="nav-logo nl-cream">
-					<img
-						src="/assets/images/icons/nl-only-cream.svg"
-						
-						height="40"
-						class="nl-only"
-					/>
-				</div>
-				<div class="nav-logo nl-yellow">
-					<img
-						src="/assets/images/icons/nl-only-yellow.svg"
-						
-						height="40"
-						class="nl-only"
-					/>
-				</div>
-				<div class="home-text">
-					<div>Hack Frost NL</div>
-				</div>
-			</a>
-		</div>
-		<div class="nav-wrapper clearfix">
-			<nav role="navigation" class="nav-menu">
-				<a href="/index.html#learn-more" class="nav-link">About</a>
-				<div class="nav-dropdown">
-					<span>Hackathon</span>
-					<div class="nav-dropdown-content">
-						<a class="nav-link" href="/pages/hackathons/2023.html">2023</a>
-						<a class="nav-link" href="/pages/hackathons/2022.html">2022</a>
+		data-collapse="medium"
+		data-animation="default"
+		data-duration="400"
+		data-easing="ease"
+		data-easing2="ease"
+		role="banner"
+		class="navbar"
+	>
+		<div class="nav-container">
+			<div class="div-nav-logo">
+				<a href="index.html" aria-current="page" class="nav-logo-link">
+					<div class="nav-logo nl-cream">
+						<img
+							src="/assets/images/icons/nl-only-cream.svg"
+							
+							height="40"
+							class="nl-only"
+						/>
 					</div>
-				</div>
-				<a href="/pages/team.html" class="nav-link">Our Team</a>
-				<a
-					href="https://discord.gg/mEH3UH7hPu"
-					class="button nav-button"
-					id="discord-button"
-				>
-					<img src="/assets/images/icons/icons8-discord.svg" id="discord-logo" />
-					<span>Discord</span>	
+					<div class="nav-logo nl-yellow">
+						<img
+							src="/assets/images/icons/nl-only-yellow.svg"
+							
+							height="40"
+							class="nl-only"
+						/>
+					</div>
+					<div class="home-text">
+						<div>Hack Frost NL</div>
+					</div>
 				</a>
-			</nav>
-
-			<!-- To Do: Fix hamburger button -->
-			<div class="menu-button w-nav-button">
-				<div class="w-icon-nav-menu"></div>
+			</div>
+			<div class="nav-wrapper">
+				<nav role="navigation" class="nav-menu" id="nav-main">
+					<a href="#" class="icon icon-nav" onclick="hamburger()">
+						<i class="hamburger-btn"></i>
+					</a>
+					<a href="/index.html#learn-more" class="nav-link">About</a>
+					<div class="nav-dropdown">
+						<span>Hackathon</span>
+						<div class="nav-dropdown-content">
+							<a class="nav-link" href="/pages/hackathons/2023.html">2023</a>
+							<a class="nav-link" href="/pages/hackathons/2022.html">2022</a>
+						</div>
+					</div>
+					<a href="/pages/team.html" class="nav-link">Our Team</a>
+					<a
+						href="https://discord.gg/mEH3UH7hPu"
+						class="button nav-button"
+						id="discord-button"
+					>
+						<img src="/assets/images/icons/icons8-discord.svg" id="discord-logo" />
+						<span>Discord</span>	
+					</a>
+				</nav>
 			</div>
 		</div>
 	</div>
-</div>
 
 	<div class="section hero">
 		<div class="banner">
@@ -312,6 +310,7 @@
 	<!-- jQuery v3.5.1 -->
 	<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/js/scripts.js"></script>
+	<script type="text/javascript" src="/assets/js/nav.js"></script>
 </body>
 
 </html>
