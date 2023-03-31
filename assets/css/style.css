@@ -528,8 +528,8 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	padding-right: 167.5px;
-	padding-left: 167.5px;
+	padding-right: 80px;
+	padding-left: 80px;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
@@ -1026,6 +1026,10 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 		-webkit-flex-direction: column;
 		-ms-flex-direction: column;
 		flex-direction: column;
+	}
+
+	.people-section {
+		text-align: center;
 	}
 }
 
