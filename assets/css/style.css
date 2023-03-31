@@ -659,6 +659,98 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 	display: none;
 }
 
+.people-section {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto auto;
+	grid-gap: 20px;
+}
+
+.workshop-section {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+	grid-gap: 20px;
+}
+
+.workshop-info {
+	padding: 10px;
+	border-style: none none solid;
+	border-width: 1px 1px 0.1px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.workshop-name {
+	font-size: 1.2rem;
+}
+
+.person-info {
+	padding: 10px;
+	border-style: none none solid;
+	border-width: 1px 1px 0.1px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.section.info-black .person-info, .section.info-black .workshop-info {
+	background-color: #272727;
+	border-color: #fffcf5 #fffcf5 rgba(255, 252, 245, 0.2);
+}
+
+.section.info-grey .person-info, .section.info-grey .workshop-info {
+	background-color: #1b1b1b;
+	border-color: #fffcf5 #fffcf5 rgba(255, 252, 245, 0.2);
+}
+
+.person-text {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.person-header {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.person-name {
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.person-title {
+	font-weight: 600;
+	font-size: 1.0rem;
+	color: #fa524e;
+}
+
+.person-bio {
+	color: #a5a7ad;
+}
+
+.person-pic {
+	border-radius: 5px;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media screen and (max-width: 1366px) {
+	.people-section {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto;
+		grid-gap: 20px;
+	}
+}
+
 @media screen and (max-width: 991px) {
 	.button {
 		background-color: #0bd685;
@@ -784,6 +876,15 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 
 	table#judging-criteria > tbody > tr > td:last-of-type {
 		text-align: left;
+	}
+
+	.person-info {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.person-header {
+		align-items: center;
 	}
 	
 }
