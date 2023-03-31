@@ -576,32 +576,6 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 	padding: 20px;
 }
 
-.sponsor-section {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	grid-auto-flow: column;
-	grid-auto-columns: 1fr;
-	-ms-grid-columns: 1fr 1fr;
-	grid-template-columns: 1fr 1fr;
-	-ms-grid-rows: auto auto;
-	grid-template-rows: auto auto;
-}
-
 .flex-center {
 	display: flex;
 	justify-content: center;
