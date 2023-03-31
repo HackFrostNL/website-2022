@@ -1002,7 +1002,7 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 		flex-direction: column;
 	}
 
-	.people-section {
+	.person-title {
 		text-align: center;
 	}
 }
