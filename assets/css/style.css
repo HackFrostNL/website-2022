@@ -266,6 +266,11 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 	opacity: 0.74;
 }
 
+.link-white {
+	color: #fff;
+	text-decoration: underline;
+}
+
 .more-info-link {
 	display: inline-block;
 	margin-top: 0px;
