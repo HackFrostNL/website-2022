@@ -168,8 +168,8 @@
 				<h2 class="red">Schedule</h2>
 				<div class="tab">
 					<button class="tab-link" data-tab-group="schedule" id="day1-tab" onclick="openTab(event, 'schedule', 'day1')">Day 1</button>
-					<button class="tab-link" data-tab-group="schedule" onclick="openTab(event, 'schedule', 'day2')">Day 2</button>
-					<button class="tab-link" data-tab-group="schedule" onclick="openTab(event, 'schedule', 'day3')">Day 3</button>
+					<button class="tab-link" data-tab-group="schedule" id="day2-tab" onclick="openTab(event, 'schedule', 'day2')">Day 2</button>
+					<button class="tab-link" data-tab-group="schedule" id="day3-tab" onclick="openTab(event, 'schedule', 'day3')">Day 3</button>
 				</div>
 				<div data-tab-group="schedule" data-tab-name="day1" class="tab-content">
 					<img src="/assets/images/hackathons/2023/Schedule_Friday.png" width="600px" alt="Friday Schedule" />
@@ -716,7 +716,7 @@
 		<script type="text/javascript">
 			// Open first tab by default
 			window.addEventListener("load", () => {
-				document.getElementById("day1-tab").click();
+				document.getElementById("day2-tab").click();
 			})
 		</script>
 	</body>
