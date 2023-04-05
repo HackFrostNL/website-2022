@@ -721,6 +721,53 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 	object-position: center;
 }
 
+.winner-section {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.winner-place {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.winner-profile {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.winner-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.winner-team-name {
+	font-size: 1.3rem;
+}
+
+.winner-pic {
+	width: 700px;
+	border-radius: 10px;
+}
+
+.winner-place.first {
+	color: #C9B037;
+}
+
+.winner-place.second {
+	color: #D7D7D7;
+}
+
+.winner-place.third {
+	color: #AD8A56;
+}
+
 @media screen and (max-width: 1366px) {
 	.people-section {
 		display: grid;
@@ -864,6 +911,11 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 
 	.person-header {
 		align-items: center;
+	}
+
+	.winner-section {
+		flex-direction: column;
+		gap: 30px;
 	}
 	
 }
