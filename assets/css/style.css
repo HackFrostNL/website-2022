@@ -768,6 +768,15 @@ table#judging-criteria > tbody > tr > td:last-of-type {
 	color: #AD8A56;
 }
 
+.announcement {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	font-size: 2rem;
+	padding: 1rem;
+	margin-top: 2rem;
+}
+
 @media screen and (max-width: 1366px) {
 	.people-section {
 		display: grid;
