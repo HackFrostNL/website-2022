@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CountdownTimer from "../components/CountdownTimer.astro";
+import Faq from "../components/Faq.astro";
+import Sponsors from "../components/Sponsors.astro";
+import Footer from "../components/Footer.astro";
+
+let sponsors = [
+	{
+		tier: "partners",
+		image: "/images/sponsors/genesis-w.png",
+		link: "https://www.genesiscentre.ca",
+	},
+	{
+		tier: "partners",
+		image: "images/sponsors/technl-w.png",
+		link: "https://www.technl.ca/",
+	},
+	{
+		tier: "partners",
+		image: "/images/sponsors/muncss_w.png",
+		link: "https://muncompsci.ca/",
+	},
+	{
+		tier: "partners",
+		image: "/images/sponsors/mun_geo_society.png",
+		link: "https://linktr.ee/mungeogsoc",
+	},
+	{
+		tier: "diamond",
+		image: "/images/sponsors/mun_engineering.png",
+		link: "https://www.mun.ca/engineering/",
+	},
+	{
+		tier: "gold",
+		image: "/images/sponsors/bounce.png",
+		link: "https://bounceinnovation.ca/",
+	},
+	{
+		tier: "silver",
+		image: "/images/sponsors/verafin.png",
+		link: "https://verafin.com",
+	},
+	{
+		tier: "silver",
+		image: "/images/sponsors/colab.png",
+		link: "https://www.colabsoftware.com/",
+	},
+	{
+		tier: "silver",
+		image: "/images/sponsors/pegnl-w.png",
+		link: "https://www.pegnl.ca/",
+	},
+	{
+		tier: "silver",
+		image: "/images/sponsors/schlimberger.png",
+		link: "https://www.slb.com/",
+	},
+	{
+		tier: "silver",
+		image: "/images/sponsors/aker.png",
+		link: "https://www.akersolutions.com/",
+	},
+];
+
+let tierOrder = ["partners", "diamond", "gold", "silver", "bronze"];
+---
+
+<Layout title="Hack Frost NL">
+	<main>
+		<div class="gray-block">
+			<CountdownTimer endDate="2023-08-09T14:11:00" />
+		</div>
+		<div class="black-block">
+			<Faq />
+		</div>
+		<div class="gray-block">
+			<Sponsors sponsors={sponsors} tierOrder={tierOrder} />
+		</div>
+	</main>
+	<div class="black-block">
+		<Footer />
+	</div>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.black-block {
+		background-color: #000;
+		color: #fa524e;
+		padding: 4rem;
+	}
+
+	.gray-block {
+		background-color: #272727;
+		color: #f2f4f7;
+		padding: 4rem;
+	}
+</style>

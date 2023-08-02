@@ -1,0 +1,114 @@
+---
+const { extraQuestions = [] } = Astro.props;
+let questions = [
+	{
+		question: "What is a hackathon?",
+		answer: `
+            A hackathon is an opportunity to learn new concepts about tech and apply them to some cool ideas.
+            These ideas are formulated to create things like websites, apps, or unthinkable solutions to a problem presented by the challenge prompt of the hackathon. <br /> <br />
+            Don't worry, you don't have to have experience coding or be an expert with computers to participate, think of it as an opportunity!
+        `,
+	},
+	{
+		question: "Who can register?",
+		answer: "The hackathon is open for university/college students, high school students, and working professionals from all backgrounds.",
+	},
+	{
+		question: "I have more questions.",
+		answer: "Our team of organizers is more than happy to answer your questions on our <a href='https://discord.gg/x5drWuwTT4'>Discord</a>.",
+	},
+	...extraQuestions,
+];
+---
+
+<div class="accordion">
+	<h1 class="accordion-title">FREQUENTLY ASKED QUESTIONS</h1>
+	{
+		questions.map(({ question, answer }, index) => (
+			<div class="accordion-item" id={"accordion-item-" + index}>
+				<h2 class="accordion-header">
+					<span class="accordion-indicator">▼</span>
+					{question}
+				</h2>{" "}
+				<div class="accordion-content">
+					<div class="accordion-content-inner" set:html={answer} />
+				</div>
+			</div>
+		))
+	}
+</div>
+
+<script>
+	// JavaScript to add interactivity to the accordion
+	document.addEventListener("DOMContentLoaded", () => {
+		let items = Array.from(document.querySelectorAll(".accordion-item"));
+
+		items.forEach((item) => {
+			let header =
+				item.querySelector<HTMLHeadingElement>(".accordion-header")!;
+			let content =
+				item.querySelector<HTMLDivElement>(".accordion-content")!;
+			let contentInner = item.querySelector<HTMLDivElement>(
+				".accordion-content-inner"
+			)!;
+
+			// Store the natural height of the element
+			const scrollHeight = contentInner.scrollHeight;
+			content.style.maxHeight = "0";
+			content.style.overflow = "hidden";
+
+			header.addEventListener("click", () => {
+				// If the content is currently displayed, hide it
+				if (content.style.maxHeight !== "0px") {
+					content.style.maxHeight = "0";
+					header.classList.remove("accordion-expanded");
+				} else {
+					// If the content is hidden, show it
+					content.style.maxHeight = `${scrollHeight}px`;
+					header.classList.add("accordion-expanded");
+				}
+			});
+		});
+	});
+</script>
+
+<style>
+	.accordion {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.accordion-title {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 40pt;
+	}
+	.accordion-header {
+		cursor: pointer;
+		user-select: none;
+		-webkit-user-select: none;
+	}
+
+	.accordion-indicator {
+		margin-right: 8px;
+		transition: transform 0.2s;
+		display: inline-block;
+		transform-origin: center 45%; /* Adjust the rotation pivot point */
+		font-size: 75%;
+	}
+
+	.accordion-expanded .accordion-indicator {
+		transform: rotate(180deg);
+	}
+
+	.accordion-content {
+		color: #d7d9de;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.2s ease-out;
+	}
+
+	.accordion-content-inner {
+		padding: 15px;
+	}
+</style>

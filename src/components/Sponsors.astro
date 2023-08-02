@@ -1,0 +1,107 @@
+---
+type Tier = "diamond" | "gold" | "silver" | "bronze" | "partners";
+
+interface Sponsor {
+	tier: Tier;
+	image: string;
+	link: string;
+}
+
+type GroupedSponsor = Record<Tier, Sponsor[]>;
+
+const { sponsors, tierOrder } = Astro.props;
+
+const groupedSponsors: GroupedSponsor = {
+	diamond: [],
+	gold: [],
+	silver: [],
+	bronze: [],
+	partners: [],
+};
+
+sponsors.forEach((sponsor: Sponsor) => {
+	groupedSponsors[sponsor.tier].push(sponsor);
+});
+---
+
+<style>
+	#sponsor-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#sponsor-title {
+		font-size: 40pt;
+	}
+
+	h1 {
+		border-bottom: 1px solid rgba(255, 252, 245, 0.2);
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.sponsor-list {
+		width: 60%;
+		gap: 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+	}
+
+	.sponsor {
+		flex: 0 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.sponsor:nth-child(3n) {
+		margin-right: 0;
+	}
+
+	.sponsor img {
+		max-width: 250px;
+		width: 100%;
+		height: auto;
+	}
+
+	@media screen and (max-width: 768px) {
+		.sponsor-list {
+			width: 100%;
+		}
+	}
+</style>
+<div id="sponsor-block">
+	<h1 id="sponsor-title">OUR SPONSORS</h1>
+	{
+		tierOrder.map(
+			(tier: "diamond" | "gold" | "silver" | "bronze" | "partners") => {
+				if (groupedSponsors[tier].length === 0) return null;
+				return (
+					<>
+						<h1>
+							{tier.charAt(0).toUpperCase() + tier.slice(1)}{" "}
+							Sponsors
+						</h1>
+						<div class="sponsor-list">
+							{groupedSponsors[tier].map((sponsor: Sponsor) => (
+								<a
+									href={sponsor.link}
+									class={`sponsor sponsor--${sponsor.tier}`}
+								>
+									<img
+										src={sponsor.image}
+										alt={`${sponsor.tier} sponsor`}
+									/>
+								</a>
+							))}
+						</div>
+						<div class="divider" />
+					</>
+				);
+			}
+		)
+	}
+</div>
