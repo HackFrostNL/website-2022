@@ -1,0 +1,66 @@
+---
+interface Props {
+	promptText: string;
+	resourceLinks: { label: string; url: string }[];
+}
+
+const { promptText, resourceLinks } = Astro.props;
+---
+
+<style>
+	.challenge-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	.title {
+		font-size: 40pt;
+		margin-bottom: 2rem;
+		text-transform: uppercase;
+	}
+
+	.prompt {
+		font-size: 18pt;
+	}
+
+	.resource-section {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.resource-links {
+		list-style-type: circle;
+		padding-left: 0;
+		text-align: left;
+	}
+
+	.resource-links li {
+		margin-bottom: 0.5rem;
+	}
+</style>
+
+<div class="challenge-container">
+	<h1 class="title">CHALLENGE</h1>
+	<strong class="prompt">PROMPT: "{promptText}"</strong>
+	<div class="resource-section">
+		<strong>Resource Links</strong>
+		<ul class="resource-links">
+			{
+				resourceLinks.map((link) => (
+					<li>
+						<a
+							href={link.url}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{link.label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>

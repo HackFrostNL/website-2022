@@ -4,6 +4,9 @@ import CountdownTimer from "../../components/CountdownTimer.astro";
 import Faq from "../../components/Faq.astro";
 import Sponsors from "../../components/Sponsors.astro";
 import Footer from "../../components/Footer.astro";
+import Winners from "../../components/Winners.astro";
+import Challenge from "../../components/Challenge.astro";
+import Title from "../../components/Title.astro";
 
 let sponsors = [
 	{
@@ -64,12 +67,65 @@ let sponsors = [
 ];
 
 let tierOrder = ["partners", "diamond", "gold", "silver", "bronze"];
+
+const winnersList = [
+	{
+		imageUrl: "/images/winners/2023/Viridis.png",
+		title: "First Place",
+		titleColor: "#C9B037",
+		name: "Viridis",
+	},
+	{
+		imageUrl: "/images/winners/2023/Daniel_Brown's_Team.png",
+		title: "Second Place",
+		titleColor: "#D7D7D7",
+		name: "Daniel Brown's Team",
+	},
+	{
+		imageUrl: "/images/winners/2023/Team_BAD.png",
+		title: "Third Place",
+		titleColor: "#AD8A56",
+		name: "Team B.A.D",
+	},
+];
 ---
 
 <Layout title="Hack Frost NL">
 	<main>
 		<div class="gray-block">
+			<Title
+				title={"HACK FROST 3.0"}
+				startDate={"March 31"}
+				endDate={"April 2"}
+				year={"2023"}
+			/>
 			<CountdownTimer endDate="2023-08-09T14:11:00" />
+		</div>
+		<div class="black-block">
+			<Winners winners={winnersList} />
+		</div>
+		<div class="gray-block">
+			<Challenge
+				promptText={"HOW CAN WE USE TECHNOLOGY TO REDUCE THE CARBON FOOTPRINT OF INDUSTRY DELIVERIES?"}
+				resourceLinks={[
+					{
+						label: "Reducing greenhouse gas emissions from heavy-duty vehicles in Europe",
+						url: "https://www.eea.europa.eu/publications/co2-emissions-of-new-heavy",
+					},
+					{
+						label: "Fast Facts on Transportation Greenhouse Gas Emissions",
+						url: "https://www.epa.gov/greenvehicles/fast-facts-transportation-greenhouse-gas-emissions",
+					},
+					{
+						label: "Transport - Energy System - IEA",
+						url: "https://www.iea.org/topics/transport",
+					},
+					{
+						label: "Smart Freight Centre",
+						url: "https://www.smartfreightcentre.org/en/",
+					},
+				]}
+			/>
 		</div>
 		<div class="black-block">
 			<Faq />
@@ -95,11 +151,15 @@ let tierOrder = ["partners", "diamond", "gold", "silver", "bronze"];
 		background-color: #000;
 		color: #fa524e;
 		padding: 4rem;
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	.gray-block {
 		background-color: #272727;
 		color: #f2f4f7;
 		padding: 4rem;
+		width: 100%;
+		box-sizing: border-box;
 	}
 </style>

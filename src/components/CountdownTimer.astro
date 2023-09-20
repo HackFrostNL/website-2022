@@ -2,22 +2,26 @@
 const { endDate } = Astro.props;
 ---
 
-<div id="countdown">
-	<div class="countdown-item">
-		<span id="days" class="countdown-value">00</span>
-		<span class="countdown-label">days</span>
-	</div>
-	<div class="countdown-item">
-		<span id="hours" class="countdown-value">00</span>
-		<span class="countdown-label">hours</span>
-	</div>
-	<div class="countdown-item">
-		<span id="minutes" class="countdown-value">00</span>
-		<span class="countdown-label">minutes</span>
-	</div>
-	<div class="countdown-item">
-		<span id="seconds" class="countdown-value">00</span>
-		<span class="countdown-label">seconds</span>
+<div
+	style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+>
+	<div id="countdown">
+		<div class="countdown-item">
+			<span id="days" class="countdown-value">00</span>
+			<span class="countdown-label">days</span>
+		</div>
+		<div class="countdown-item">
+			<span id="hours" class="countdown-value">00</span>
+			<span class="countdown-label">hours</span>
+		</div>
+		<div class="countdown-item">
+			<span id="minutes" class="countdown-value">00</span>
+			<span class="countdown-label">minutes</span>
+		</div>
+		<div class="countdown-item">
+			<span id="seconds" class="countdown-value">00</span>
+			<span class="countdown-label">seconds</span>
+		</div>
 	</div>
 </div>
 
