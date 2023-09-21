@@ -1,0 +1,51 @@
+---
+import Person, { type IPerson } from "./Person.astro";
+
+interface Props {
+    title: string;
+    peopleList: IPerson[];
+}
+
+const { peopleList, title } = Astro.props;
+---
+
+<style>
+    .people-section {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .people-wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-gap: 20px;
+    }
+
+    @media screen and (max-width: 1366px) {
+        .people-wrapper {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: auto;
+            grid-gap: 20px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .people-section {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+</style>
+<section class="people-section">
+    <h1 class="section-title">{title}</h1>
+    <div class="people-wrapper">
+        {peopleList.map((person) => <Person person={person} />)}
+    </div>
+</section>

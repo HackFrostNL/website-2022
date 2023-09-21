@@ -1,78 +1,78 @@
 ---
 // Footer.astro
 type SocialLink = {
-	imgSrc: string;
-	link: string;
+    imgSrc: string;
+    link: string;
 };
 
 const socialLinks: SocialLink[] = [
-	{
-		imgSrc: "/images/icons/icons8-instagram.svg",
-		link: "https://www.instagram.com/hackfrostnl/",
-	},
-	{
-		imgSrc: "/images/icons/icons8-facebook-f.svg",
-		link: "https://www.facebook.com/hackfrostnl",
-	},
-	{
-		imgSrc: "/images/icons/icons8-twitter.svg",
-		link: "https://twitter.com/hackfrostnl",
-	},
-	{
-		imgSrc: "/images/icons/icons8-linkedin-2.svg",
-		link: "https://www.linkedin.com/company/hack-frost-nl/about/",
-	},
-	{
-		imgSrc: "/images/icons/icons8-youtube.svg",
-		link: "https://www.youtube.com/channel/UCTbP245TTeFp3M-ODShyH4A",
-	},
-	{
-		imgSrc: "/images/icons/icons8-github.svg",
-		link: "https://github.com/HackFrostNL",
-	},
+    {
+        imgSrc: "/images/icons/icons8-instagram.svg",
+        link: "https://www.instagram.com/hackfrostnl/",
+    },
+    {
+        imgSrc: "/images/icons/icons8-facebook-f.svg",
+        link: "https://www.facebook.com/hackfrostnl",
+    },
+    {
+        imgSrc: "/images/icons/icons8-twitter.svg",
+        link: "https://twitter.com/hackfrostnl",
+    },
+    {
+        imgSrc: "/images/icons/icons8-linkedin-2.svg",
+        link: "https://www.linkedin.com/company/hack-frost-nl/about/",
+    },
+    {
+        imgSrc: "/images/icons/icons8-youtube.svg",
+        link: "https://www.youtube.com/channel/UCTbP245TTeFp3M-ODShyH4A",
+    },
+    {
+        imgSrc: "/images/icons/icons8-github.svg",
+        link: "https://github.com/HackFrostNL",
+    },
 ];
 
 const year = new Date().getFullYear();
 ---
 
 <style>
-	.footer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 2rem;
         padding: 2rem;
-	}
+    }
 
-	.footer a {
-		text-decoration: none;
-	}
+    .footer a {
+        text-decoration: none;
+    }
 
     .footer-socials {
         display: flex;
         gap: 1rem;
     }
 
-	.footer-socials img {
-		max-width: 50px;
-	}
+    .footer-socials img {
+        max-width: 50px;
+    }
 
-	.footer-logo {
-		width: 120px;
-	}
+    .footer-logo {
+        width: 120px;
+    }
 </style>
 
 <footer class="footer">
-	<img src="/images/hfnl-cream.svg" alt="Hack Frost NL" class="footer-logo" />
-	<div class="footer-socials">
-		{
-			socialLinks.map((link: SocialLink) => (
-				<a href={link.link}>
-					<img src={link.imgSrc} alt="social link" />
-				</a>
-			))
-		}
-	</div>
-    © Hack Frost NL {year}
+    <img src="/images/hfnl-cream.svg" alt="Hack Frost NL" class="footer-logo" />
+    <div class="footer-socials">
+        {
+            socialLinks.map((link: SocialLink) => (
+                <a href={link.link}>
+                    <img src={link.imgSrc} alt="social link" />
+                </a>
+            ))
+        }
+    </div>
+     © Hack Frost NL {year}
 </footer>

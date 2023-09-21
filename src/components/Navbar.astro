@@ -1,265 +1,315 @@
 ---
+
 ---
 
 <div class="navbar">
-	<a class="navbar-logo" href="/">
-		<div class="navbar-logo-icon"></div>
-		<span class="navbar-logo-text">HACK FROST NL</span>
-	</a>
-	<div id="hamburger" class="hamburger">
-		<span></span>
-		<span></span>
-		<span></span>
-	</div>
-	<div id="navbar-links" class="navbar-links">
-		<a class="navbar-link" href="/about">About</a>
-		<div class="dropdown">
-			<span class="dropdown-btn">HACKATHON</span>
-			<div class="dropdown-content" id="hackathon-dropdown">
-				<a href="/hackathons/2023">2023</a>
-				<a href="/hackathons/2022">2022</a>
-			</div>
-		</div>
-		<a class="navbar-link" href="/team">Our Team</a>
-		<a class="navbar-button" href="https://discord.gg/x5drWuwTT4">
-			<img
-				class="navbar-button-icon"
-				id="navbar-button-icon-discord"
-				alt="Discord Icon"
-			/>
-			<span class="navbar-button-text">Discord</span>
-		</a>
-	</div>
+    <a class="navbar-logo" href="/">
+        <div class="navbar-logo-icon"></div>
+        <span class="navbar-logo-text">HACK FROST NL</span>
+    </a>
+    <div id="hamburger" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="navbar-right">
+        <div id="navbar-links" class="navbar-links">
+            <a class="navbar-link" href="/about">About</a>
+            <div class="dropdown">
+                <span class="dropdown-btn">HACKATHON</span>
+                <div class="dropdown-content" id="hackathon-dropdown">
+                    <a href="/hackathons/2023">2023</a>
+                    <a href="/hackathons/2022">2022</a>
+                </div>
+            </div>
+            <a class="navbar-link" href="/team">Our Team</a>
+            <a class="navbar-button" href="https://discord.gg/x5drWuwTT4">
+                <img
+                    class="navbar-button-icon"
+                    id="navbar-button-icon-discord"
+                    alt="Discord Icon"
+                />
+                <span class="navbar-button-text">Discord</span>
+            </a>
+        </div>
+    </div>
 </div>
 <script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const hamburger = document.getElementById("hamburger")!;
-		const navbarLinks = document.getElementById("navbar-links")!;
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger")!;
+        const navbarRight = document.getElementById("navbar-right")!;
 
-		hamburger.addEventListener("click", function () {
-			navbarLinks.classList.toggle("show");
-		});
-	});
+        hamburger.addEventListener("click", function () {
+            navbarRight.classList.toggle("show");
+        });
+    });
 </script>
 
 <style>
-	/* General Navbar Styles */
-	.navbar {
-		padding: 22px 5%;
-		color: #fff;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		border-style: none none solid;
-		border-width: 1px 1px 0.1px;
-		border-color: #fffcf5 #fffcf5 rgba(255, 252, 245, 0.2);
-	}
+    /* General Navbar Styles */
+    .navbar {
+        padding: 22px 5%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-style: none none solid;
+        border-width: 1px 1px 0.1px;
+        border-color: #fffcf5 #fffcf5 rgba(255, 252, 245, 0.2);
+    }
 
-	.navbar-logo {
-		display: flex;
-		align-items: center;
-		text-decoration: none;
-	}
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
 
-	.navbar-links {
-		order: 2;
-		width: 100%;
-		display: none;
-		flex-direction: column;
-		align-items: start;
-		font-weight: 600;
-		text-transform: uppercase;
-	}
+    #navbar-right {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
 
-	.navbar-links.show {
-		display: flex;
-		align-items: center;
-	}
+    #navbar-right.show {
+        width: 100%;
+        display: flex;
+    }
 
-	/* Navbar Logo Styles */
-	.navbar-logo-icon {
-		width: 35px;
-		height: 35px;
-		background-color: #fff;
-		-webkit-mask-image: url(/images/logo.svg);
-		mask-image: url(/images/logo.svg);
-		-webkit-mask-repeat: no-repeat;
-		mask-repeat: no-repeat;
-		-webkit-mask-size: contain;
-		mask-size: contain;
-		-webkit-mask-position: center;
-		mask-position: center;
-		-webkit-mask-composite: source-over;
-		mask-composite: source-over;
-	}
+    .navbar-links {
+        order: 2;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
 
-	.navbar-logo:hover .navbar-logo-icon {
-		background-color: #ffda4a;
-	}
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.navbar-logo-text {
-		font-family: "Josefin Sans", sans-serif;
-		color: #fff;
-		opacity: 0;
-		margin-left: 8px;
-		transition: opacity 0.2s;
-		position: relative;
-		pointer-events: none;
-	}
+    /* Navbar Logo Styles */
+    .navbar-logo-icon {
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        -webkit-mask-image: url(/images/logo.svg);
+        mask-image: url(/images/logo.svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-composite: source-over;
+        mask-composite: source-over;
+    }
 
-	.navbar-logo:hover .navbar-logo-text {
-		opacity: 1;
-	}
+    .navbar-logo:hover .navbar-logo-icon {
+        background-color: #ffda4a;
+    }
 
-	/* Navbar Link Styles */
-	.navbar-link,
-	.dropdown .navbar-link {
-		text-decoration: none;
-		color: #fff;
-	}
+    .navbar-logo-text {
+        font-family: "Josefin Sans", sans-serif;
+        color: #fff;
+        opacity: 0;
+        margin-left: 8px;
+        transition: opacity 0.2s;
+        position: relative;
+        pointer-events: none;
+    }
 
-	.dropdown {
-		position: relative;
-		display: inline-block;
-	}
+    .navbar-logo:hover .navbar-logo-text {
+        opacity: 1;
+    }
 
-	.dropdown-content {
-		display: none;
-		position: absolute;
-		background-color: #000;
-		min-width: 100px;
-		z-index: 1;
-		left: 50%;
-		transform: translateX(-50%);
-	}
+    /* Navbar Link Styles */
+    .navbar-link,
+    .dropdown {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+    }
 
-	.dropdown:hover .dropdown-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
 
-	.dropdown-content a {
-		color: white;
-		text-decoration: none;
-		display: block;
-	}
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #000;
+        min-width: 100px;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
-	.dropdown-btn:hover {
-		color: #ffda4a;
-		cursor: pointer;
-	}
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	/* Hamburger Menu Styles */
-	.hamburger {
-		order: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		width: 2rem;
-		height: 2rem;
-		cursor: pointer;
-	}
+    .dropdown-content a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
 
-	.hamburger span {
-		width: 2rem;
-		height: 0.25rem;
-		background: #fff;
-	}
+    .dropdown-btn:hover {
+        color: #ffda4a;
+        cursor: pointer;
+    }
 
-	/* Navbar Button Styles */
-	.navbar-button {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 8px 16px;
-		background-color: #ffda4a;
-		text-decoration: none;
-		color: #000;
-		transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-		border: 2px solid #ffda4a;
-	}
+    /* Hamburger Menu Styles */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+    }
 
-	.navbar-button:hover {
-		background-color: #272727;
-		border-color: #ffda4a;
-		color: #ffda4a;
-	}
+    .hamburger span {
+        width: 2rem;
+        height: 0.25rem;
+        background: #fff;
+    }
 
-	.navbar-button:hover .navbar-button-icon {
-		background-color: #ffda4a;
-	}
+    /* Navbar Button Styles */
+    .navbar-button {
+        width: 120px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        margin-left: 16px;
+        padding: 8px 16px;
+        background-color: rgb(255, 218, 74);
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #272727;
+        transition:
+            background-color 0.2s,
+            color 0.2s,
+            border-color 0.2s;
+        border: 2px solid #ffda4a;
+        box-shadow:
+            0 0 0 1px rgba(0, 0, 0, 0.11),
+            inset 0 -34px 50px -25px rgba(0, 0, 0, 0.16),
+            inset 0 1px 0 0 hsla(0, 0%, 100%, 0.3);
+    }
 
-	.navbar-button-icon {
-		width: 24px;
-		height: 24px;
-		margin-right: 8px;
-		-webkit-mask-image: url(/images/icons/discord.svg);
-		mask-image: url(/images/icons/discord.svg);
-		-webkit-mask-repeat: no-repeat;
-		mask-repeat: no-repeat;
-		-webkit-mask-size: contain;
-		mask-size: contain;
-		background-color: #000;
-		transition: background-color 0.2s;
-	}
+    .navbar-button:hover {
+        background-color: #272727;
+        border-color: #ffda4a;
+        color: #ffda4a;
+    }
 
-	/* Media Queries */
-	@media (min-width: 769px) {
-		.navbar {
-			flex-wrap: nowrap;
-		}
+    .navbar-button:hover .navbar-button-icon {
+        background-color: #ffda4a;
+    }
 
-		.hamburger {
-			order: 0;
-			display: none;
-		}
+    .navbar-button-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        -webkit-mask-image: url(/images/icons/discord.svg);
+        mask-image: url(/images/icons/discord.svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        background-color: #272727;
+        transition: background-color 0.2s;
+    }
 
-		.navbar-links {
-			order: 0;
-			width: auto;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			gap: 16px;
-		}
-	}
+    /* Media Queries */
+    @media (min-width: 769px) {
+        .navbar {
+            flex-wrap: nowrap;
+        }
 
-	@media (max-width: 768px) {
-		.navbar-links {
-			gap: 4px;
-		}
+        .hamburger {
+            order: 0;
+            display: none;
+        }
 
-		.dropdown-btn {
-			display: none;
-		}
+        .navbar-links {
+            order: 0;
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+        }
+    }
 
-		.dropdown-content a:first-child {
-			border: none;
-		}
+    @media (max-width: 768px) {
+        .navbar-logo-text {
+            display: none;
+        }
 
-		#hackathon-dropdown a::before {
-			content: "Hackathon ";
-		}
+        #navbar-right {
+            display: none;
+        }
 
-		.dropdown:hover .dropdown-content,
-		.dropdown:focus-within .dropdown-content,
-		.dropdown .dropdown-content {
-			display: flex;
-			flex-direction: column;
-			position: relative;
-			box-shadow: none;
-			padding: 0;
-			background-color: #272727;
-			gap: 4px;
-		}
-		.dropdown-content a {
-			display: block;
-			background-color: inherit;
-			color: #fff;
-			text-decoration: none;
-			text-align: center;
-		}
-	}
+        .navbar-button {
+            color: white;
+            font-weight: 600;
+            background-color: inherit;
+            border: none;
+            padding: 0;
+            font-size: 14px;
+            box-shadow: none;
+            margin-left: 0;
+        }
+
+        .navbar-button-icon {
+            display: none;
+        }
+
+        .navbar-links {
+            gap: 4px;
+        }
+
+        .dropdown-btn {
+            display: none;
+        }
+
+        .dropdown-content a:first-child {
+            border: none;
+        }
+
+        #hackathon-dropdown a::before {
+            content: "Hackathon ";
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content,
+        .dropdown .dropdown-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: none;
+            padding: 0;
+            background-color: #272727;
+            gap: 4px;
+        }
+        .dropdown-content a {
+            display: block;
+            background-color: inherit;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
 </style>

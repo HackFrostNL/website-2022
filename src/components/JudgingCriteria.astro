@@ -1,0 +1,80 @@
+---
+interface JudgingCriteria {
+    category: string;
+    description: string;
+    points: number;
+}
+
+interface Props {
+    criteria: JudgingCriteria[];
+}
+
+const { criteria } = Astro.props;
+let totalPoints = criteria.reduce(
+    (sum, criterion) => sum + criterion.points,
+    0,
+);
+---
+
+<style>
+    #judging-criteria-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #121212;
+    }
+
+    th.pts,
+    td.pts {
+        text-align: center;
+    }
+
+    .total-row {
+        font-weight: bold;
+    }
+</style>
+
+<div id="judging-criteria-wrapper">
+    <h1 class="section-title">Judging Criteria</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Description</th>
+                <th class="pts">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {
+                criteria.map((criterion) => (
+                    <tr>
+                        <td>{criterion.category}</td>
+                        <td>{criterion.description}</td>
+                        <td class="pts">{criterion.points}</td>
+                    </tr>
+                ))
+            }
+            <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td class="pts">{totalPoints}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -3,93 +3,93 @@ const { endDate } = Astro.props;
 ---
 
 <div
-	style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+    style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;"
 >
-	<div id="countdown">
-		<div class="countdown-item">
-			<span id="days" class="countdown-value">00</span>
-			<span class="countdown-label">days</span>
-		</div>
-		<div class="countdown-item">
-			<span id="hours" class="countdown-value">00</span>
-			<span class="countdown-label">hours</span>
-		</div>
-		<div class="countdown-item">
-			<span id="minutes" class="countdown-value">00</span>
-			<span class="countdown-label">minutes</span>
-		</div>
-		<div class="countdown-item">
-			<span id="seconds" class="countdown-value">00</span>
-			<span class="countdown-label">seconds</span>
-		</div>
-	</div>
+    <div id="countdown">
+        <div class="countdown-item">
+            <span id="days" class="countdown-value">00</span>
+            <span class="countdown-label">days</span>
+        </div>
+        <div class="countdown-item">
+            <span id="hours" class="countdown-value">00</span>
+            <span class="countdown-label">hours</span>
+        </div>
+        <div class="countdown-item">
+            <span id="minutes" class="countdown-value">00</span>
+            <span class="countdown-label">minutes</span>
+        </div>
+        <div class="countdown-item">
+            <span id="seconds" class="countdown-value">00</span>
+            <span class="countdown-label">seconds</span>
+        </div>
+    </div>
 </div>
 
 <script define:vars={{ endDate: endDate }}>
-	let intervalId;
-	const countdownElement = document.getElementById("countdown");
+    let intervalId;
+    const countdownElement = document.getElementById("countdown");
 
-	const daysElement = document.getElementById("days");
-	const hoursElement = document.getElementById("hours");
-	const minutesElement = document.getElementById("minutes");
-	const secondsElement = document.getElementById("seconds");
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
 
-	function startCountdown() {
-		if (!countdownElement) {
-			throw new Error("Countdown element not found");
-		}
+    function startCountdown() {
+        if (!countdownElement) {
+            throw new Error("Countdown element not found");
+        }
 
-		const now = new Date();
-		const targetDate = new Date(endDate);
-		const distance = targetDate.getTime() - now.getTime();
+        const now = new Date();
+        const targetDate = new Date(endDate);
+        const distance = targetDate.getTime() - now.getTime();
 
-		// Time calculations for days, hours, minutes and seconds
-		const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		const hours = Math.floor(
-			(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-		);
-		const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-		// Display leading zeroes
-		daysElement.textContent = String(days).padStart(2, "0");
-		hoursElement.textContent = String(hours).padStart(2, "0");
-		minutesElement.textContent = String(minutes).padStart(2, "0");
-		secondsElement.textContent = String(seconds).padStart(2, "0");
+        // Display leading zeroes
+        daysElement.textContent = String(days).padStart(2, "0");
+        hoursElement.textContent = String(hours).padStart(2, "0");
+        minutesElement.textContent = String(minutes).padStart(2, "0");
+        secondsElement.textContent = String(seconds).padStart(2, "0");
 
-		// If the countdown is over, hide the countdown element and clear the interval
-		if (now >= targetDate) {
-			countdownElement.style.display = "none";
-			clearInterval(intervalId);
-		}
-	}
+        // If the countdown is over, hide the countdown element and clear the interval
+        if (now >= targetDate) {
+            countdownElement.style.display = "none";
+            clearInterval(intervalId);
+        }
+    }
 
-	// Start the countdown and update it every second
-	startCountdown();
-	intervalId = setInterval(startCountdown, 1000);
+    // Start the countdown and update it every second
+    startCountdown();
+    intervalId = setInterval(startCountdown, 1000);
 </script>
 
 <style>
-	#countdown {
-		display: flex;
-		justify-content: space-around;
-		padding: 1rem;
-		width: 400px;
-	}
+    #countdown {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        width: 400px;
+    }
 
-	.countdown-item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.countdown-value {
-		display: block;
-		font-size: 3rem;
-		margin-bottom: 0.5rem;
-	}
+    .countdown-value {
+        display: block;
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
 
-	.countdown-label {
-		font-size: 1rem;
-	}
+    .countdown-label {
+        font-size: 1rem;
+    }
 </style>

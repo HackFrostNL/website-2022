@@ -1,0 +1,74 @@
+---
+interface Workshop {
+    name: string;
+    dateTime: string;
+    location: string;
+    hosts: string;
+    downloadLink?: string;
+}
+
+interface Props {
+    workshops: Workshop[];
+}
+
+const { workshops } = Astro.props;
+---
+
+<div id="workshops-container">
+    <h1 class="section-title">WORKSHOPS</h1>
+    <div class="workshop-section">
+        {
+            workshops.map((workshop) => (
+                <div class="workshop-info">
+                    <span class="workshop-name">{workshop.name}</span>
+                    <span class="workshop-time">🕒 {workshop.dateTime}</span>
+                    <span class="workshop-location">
+                        🗺 {workshop.location}
+                    </span>
+                    <span class="workshop-host">👤 {workshop.hosts}</span>
+                    {workshop.downloadLink && (
+                        <span class="workshop-link">
+                            🔗{" "}
+                            <a class="link-white" href={workshop.downloadLink}>
+                                Download
+                            </a>
+                        </span>
+                    )}
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    #workshops-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .workshop-section {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+
+    .workshop-info {
+        background-color: #1b1b1b;
+        padding: 10px;
+        border-style: none none solid;
+        border-width: 1px 1px 0.1px;
+        border-color: #fffcf5 #fffcf5 rgba(255, 252, 245, 0.2);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .workshop-name {
+        font-size: 1.2rem;
+    }
+</style>

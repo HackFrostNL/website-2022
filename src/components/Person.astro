@@ -1,0 +1,89 @@
+---
+export interface IPerson {
+    imageUrl: string;
+    name: string;
+    title: string;
+    bio?: string;
+}
+
+interface Props {
+    person: IPerson;
+}
+
+const { person } = Astro.props;
+---
+
+<div class="person-info">
+    <img src={person.imageUrl} class="person-pic" alt={person.name} />
+    <div class="person-text">
+        <div class="person-header">
+            <span class="person-name">{person.name}</span>
+            <span class="person-title">{person.title}</span>
+        </div>
+        <span class="person-bio" set:html={person.bio} />
+    </div>
+</div>
+
+<style>
+    .person-info {
+        padding: 10px;
+        border-style: none none solid;
+        border-width: 1px 1px 0.1px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        border-color: #fffcf5 #fffcf5 rgba(255, 252, 245, 0.2);
+        background-color: #1b1b1b;
+    }
+
+    .person-text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .person-header {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .person-name {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .person-title {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #fa524e;
+    }
+
+    .person-bio {
+        color: #a5a7ad;
+    }
+
+    .person-pic {
+        border-radius: 5px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @media screen and (max-width: 767px) {
+        .person-info {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .person-header {
+            align-items: center;
+        }
+
+        .person-title {
+            text-align: center;
+        }
+    }
+</style>

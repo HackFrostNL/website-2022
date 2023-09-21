@@ -1,165 +1,530 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import CountdownTimer from "../../components/CountdownTimer.astro";
-import Faq from "../../components/Faq.astro";
-import Sponsors from "../../components/Sponsors.astro";
-import Footer from "../../components/Footer.astro";
-import Winners from "../../components/Winners.astro";
-import Challenge from "../../components/Challenge.astro";
-import Title from "../../components/Title.astro";
+import Layout from "src/layouts/Layout.astro";
+import CountdownTimer from "@components/CountdownTimer.astro";
+import Faq from "@components/Faq.astro";
+import Sponsors from "@components/Sponsors.astro";
+import Footer from "@components/Footer.astro";
+import Winners from "@components/Winners.astro";
+import Challenge from "@components/Challenge.astro";
+import Title from "@components/Title.astro";
+import ButtonContentDisplay from "@components/ButtonContentDisplay.astro";
+import JudgingCriteria from "@components/JudgingCriteria.astro";
+import Workshops from "@components/Workshops.astro";
+import PeopleList from "@components/PeopleList.astro";
 
-let sponsors = [
-	{
-		tier: "partners",
-		image: "/images/sponsors/genesis-w.png",
-		link: "https://www.genesiscentre.ca",
-	},
-	{
-		tier: "partners",
-		image: "/images/sponsors/technl-w.png",
-		link: "https://www.technl.ca/",
-	},
-	{
-		tier: "partners",
-		image: "/images/sponsors/muncss_w.png",
-		link: "https://muncompsci.ca/",
-	},
-	{
-		tier: "partners",
-		image: "/images/sponsors/mun_geo_society.png",
-		link: "https://linktr.ee/mungeogsoc",
-	},
-	{
-		tier: "diamond",
-		image: "/images/sponsors/mun_engineering.png",
-		link: "https://www.mun.ca/engineering/",
-	},
-	{
-		tier: "gold",
-		image: "/images/sponsors/bounce.png",
-		link: "https://bounceinnovation.ca/",
-	},
-	{
-		tier: "silver",
-		image: "/images/sponsors/verafin.png",
-		link: "https://verafin.com",
-	},
-	{
-		tier: "silver",
-		image: "/images/sponsors/colab.png",
-		link: "https://www.colabsoftware.com/",
-	},
-	{
-		tier: "silver",
-		image: "/images/sponsors/pegnl-w.png",
-		link: "https://www.pegnl.ca/",
-	},
-	{
-		tier: "silver",
-		image: "/images/sponsors/schlimberger.png",
-		link: "https://www.slb.com/",
-	},
-	{
-		tier: "silver",
-		image: "/images/sponsors/aker.png",
-		link: "https://www.akersolutions.com/",
-	},
+const sponsors = [
+    {
+        tier: "partners",
+        image: "/images/sponsors/genesis-w.png",
+        link: "https://www.genesiscentre.ca",
+    },
+    {
+        tier: "partners",
+        image: "/images/sponsors/technl-w.png",
+        link: "https://www.technl.ca/",
+    },
+    {
+        tier: "partners",
+        image: "/images/sponsors/muncss_w.png",
+        link: "https://muncompsci.ca/",
+    },
+    {
+        tier: "partners",
+        image: "/images/sponsors/mun_geo_society.png",
+        link: "https://linktr.ee/mungeogsoc",
+    },
+    {
+        tier: "diamond",
+        image: "/images/sponsors/mun_engineering.png",
+        link: "https://www.mun.ca/engineering/",
+    },
+    {
+        tier: "gold",
+        image: "/images/sponsors/bounce.png",
+        link: "https://bounceinnovation.ca/",
+    },
+    {
+        tier: "silver",
+        image: "/images/sponsors/verafin.png",
+        link: "https://verafin.com",
+    },
+    {
+        tier: "silver",
+        image: "/images/sponsors/colab.png",
+        link: "https://www.colabsoftware.com/",
+    },
+    {
+        tier: "silver",
+        image: "/images/sponsors/schlimberger.png",
+        link: "https://www.slb.com/",
+    },
+    {
+        tier: "silver",
+        image: "/images/sponsors/aker.png",
+        link: "https://www.akersolutions.com/",
+    },
+    {
+        tier: "silver",
+        image: "/images/sponsors/pegnl-w.png",
+        link: "https://www.pegnl.ca/",
+    },
 ];
 
-let tierOrder = ["partners", "diamond", "gold", "silver", "bronze"];
+const tierOrder = ["partners", "diamond", "gold", "silver", "bronze"];
 
 const winnersList = [
-	{
-		imageUrl: "/images/winners/2023/Viridis.png",
-		title: "First Place",
-		titleColor: "#C9B037",
-		name: "Viridis",
-	},
-	{
-		imageUrl: "/images/winners/2023/Daniel_Brown's_Team.png",
-		title: "Second Place",
-		titleColor: "#D7D7D7",
-		name: "Daniel Brown's Team",
-	},
-	{
-		imageUrl: "/images/winners/2023/Team_BAD.png",
-		title: "Third Place",
-		titleColor: "#AD8A56",
-		name: "Team B.A.D",
-	},
+    {
+        imageUrl: "/images/winners/2023/Viridis.png",
+        title: "First Place",
+        titleColor: "#C9B037",
+        name: "Viridis",
+    },
+    {
+        imageUrl: "/images/winners/2023/Daniel_Brown's_Team.png",
+        title: "Second Place",
+        titleColor: "#D7D7D7",
+        name: "Daniel Brown's Team",
+    },
+    {
+        imageUrl: "/images/winners/2023/Team_BAD.png",
+        title: "Third Place",
+        titleColor: "#AD8A56",
+        name: "Team B.A.D",
+    },
+];
+
+const judgingCriteria = [
+    {
+        category: "Feasibility",
+        description:
+            "The team has clearly identified a problem related to the prompt",
+        points: 15,
+    },
+    {
+        category: "Feasibility",
+        description:
+            "The team has clearly described a solution that utilizes technology to address the problem",
+        points: 15,
+    },
+    {
+        category: "Feasibility",
+        description:
+            "The proposed solution has the potential for deployment and scaleability",
+        points: 10,
+    },
+    {
+        category: "Creativity/Design",
+        description:
+            "The solution shows creativity and introduces a new “approach” to offsetting carbon emissions",
+        points: 15,
+    },
+    {
+        category: "Creativity/Design",
+        description:
+            "The solution takes into consideration both environmental impact and the well-being of staff involved in the industry delivery process",
+        points: 10,
+    },
+    {
+        category: "Creativity/Design",
+        description:
+            "If implemented successfully, this would significantly impact carbon emissions",
+        points: 10,
+    },
+    {
+        category: "Presentation",
+        description:
+            "The presentation is clear, concise, on time and provides evidence for decisions",
+        points: 10,
+    },
+    {
+        category: "Presentation",
+        description:
+            "The slideshow/visual presentation is professional in appearance and appropriately designed",
+        points: 5,
+    },
+    {
+        category: "Presentation",
+        description:
+            "There is evidence of teamwork and leveraging the strengths of the whole team",
+        points: 5,
+    },
+    {
+        category: "Presentation",
+        description: "The team responded well to questions",
+        points: 5,
+    },
+];
+
+const faqs = [
+    {
+        question: "When and where?",
+        answer: `The hackathon will begin on Friday March 31st, around 5 pm and end on Sunday April 2nd around 6pm.<br /><br />
+		We are partnering with the Genesis Center this year, and we will be having the hackathon in-person at Memorial University in the Bruneau Centre for Research and Innovation (IIC) and the Science Building.`,
+    },
+    {
+        question: "What happens in a hackathon?",
+        answer: `Our hackathons are 48 hours long. Day 1 is the challenge announcment & team formation. Day 2 is mentorship, workshops, games, and sponsor booths. Day 3 is project presentations and wrap-up. Here is the previous hackathon's schedule.`,
+    },
+    {
+        question: "Do I need a team?",
+        answer: `Yes, in order to participate in the hackathon, you must be in a team of at least 2, but we do recommend forming a team of 3-4 members. You can register your team through our eventbrite page, where one member would need to form the team and the rest register as part of that team.<br /><br />
+		If you don't yet have a team, you should join our discord server and we'll fill you in during our team-forming session. You might even find some people to team up with! `,
+    },
+    {
+        question: "What if I don't code? Should I still register?",
+        answer: `Of course! The hackathon isn't a competition to find the Next Top Programmer, it's a learning experience! We'll have workshops throughout to help you learn if you're a total beginner. If you're not, you'll definitely learn something new and valuable!<br /><br />
+		Focus on having fun and challenging yourself! You can choose to focus on participating in the challenges, spending time in events, or even just making new friends and connections. `,
+    },
+    {
+        question: "What about the prizes?",
+        answer: "We're giving out up to $6000 this year to the top 3 teams.",
+    },
+    {
+        question: "Would I get swag and merchandise?",
+        answer: "Yes and <strong>YES</strong>! You'll get swag and merchandise by participating in our event. We're working hard to bring you cool swag that will get you right in the hacker mood that you can pick up during the hackathon.",
+    },
+];
+
+const judges = [
+    {
+        name: "Marlayne Hardy",
+        imageUrl: "/images/people/Marlayne_Hardy.png",
+        title: "Director, Innovation Programs (techNL)",
+        bio: "A results-oriented and driven leader, Marlayne has contributed to the success of a diverse cross-section of organizations in the private, government, and not-for-profit sectors. As a certified Strategic Communication Management Professional (SCMP), she brings both experience and recognized expertise to organizational leadership, strategic marketing communications, community relations, and program management. She embraces new challenges, adapts quickly to changing circumstances, and is passionate about diversity, equity, and inclusion. Marlayne loves the ocean and is grateful to live in Newfoundland and Labrador.",
+    },
+    {
+        name: "Leigh Janes",
+        imageUrl: "/images/people/Leigh_Janes.png",
+        title: "Senior Project Coordinator – Wood Robotics Project (Wood Canada)",
+        bio: "I have always had an interest in computers! Through my 30-year career in the Information Technology field, I have enjoyed many roles! My early experience in programming helped me along the way! I started my IT career in 1990 graduating from the Newfoundland Career Academy as a Micro-Computer Specialist. My first programming experience was working as DB III plus database programmer with the Association of Registered Nurses of Newfoundland (ARNN) in St. John’s, where I had to share one computer with a co-worker! Over the years though various IT roles I have had experience with batch files and some PowerShell scripting. However, my focus was more on architecting server and storage systems - performing installations, configuration, and administration.",
+    },
+    {
+        name: "Daniel Grillo",
+        imageUrl: "/images/people/Daniel_Grillo.jpg",
+        title: "Software Developer (Verafin)",
+        bio: "Hi, Im Daniel! I work as a software developer for Verafin. I graduated from Memorial University in Computer Science and Business and am a Hack Frost Alumni! I am very passionate about data-driven solutions and martial arts.",
+    },
+    {
+        name: "Joel Lake",
+        imageUrl: "/images/people/Joel_Lake.png",
+        title: "Software Developer (enaimco)",
+        bio: "Hey there! I'm a software developer with a passion for web development. For just over a year now, I've had the pleasure of working at enaimco, an exciting startup in the oil and energy industry.",
+    },
+    {
+        name: "Ed Martin",
+        imageUrl: "/images/people/Ed_Martin.png",
+        title: "Director (Memorial Centre for Entrepreneurship)",
+        bio: "Ed currently serves as the Director of the Memorial Centre for Entrepreneurship (MCE) at Memorial University. MCE seeks to inspire and enable existing and aspiring student entrepreneurs at Memorial University. Prior to his role at MCE, Ed was the CEO of Clockwork Fox Studios, an edtech startup that developed Zorbit's Math Adventure, a digital learning platform that is used by hundreds of thousands of teachers and students across North America. In 2021, Ed led Clockwork Fox's successful acquisition by Carnegie Learning. Ed was also the President of Best Boy Entertainment, where he produced multiple kids' and documentary series, as well as the award-winning film Closet Monster.",
+    },
+    {
+        name: "Lesley Chard",
+        imageUrl: "/images/people/Lesley_Chard.png",
+        title: "VP, Design and UX (Carnegie Learning)",
+        bio: "I manage, design, and build products for the web. I'm passionate about making the technology sector more diverse and leveraging technology to create positive impact. Using design methodologies, I believe we can build human capacity and allow for more time spent where it matters most.",
+    },
+    {
+        name: "Liam Flanagan",
+        imageUrl: "/images/people/Liam_Flanagan.png",
+        title: "Program Manager, Ready Talent (techNL)",
+        bio: "Liam Flanagan has been a committed supporter of Newfoundland and Labrador's tech sector since 2015. Currently, he leads the Ready Talent team at techNL, connecting job seekers and tech employers with resources, opportunities, and education in our province. In 2022, the Ready Talent team helped more than 20 job seekers find careers in tech and hopes to improve that number in 2023. Liam's experience supporting early-stage start-ups while leading Genesis' Evolution Program and rapidly growing scale-ups while working with Invest Ottawa have given him ample opportunity to see what helps tech ideas succeed at all levels. Liam is excited to jump into this hackathon and provide lean start-up methodology, pitching, and customer interview advice! ",
+    },
+    {
+        name: "Clark Oake",
+        imageUrl: "/images/people/Clark_Oake.png",
+        title: "Software Development Team Lead (PolyUnity) & Coach (GetCoding)",
+        bio: "Clark has always been fascinated by technology and its potential to shape the future. After working as an Engineering Technologist in the Oil and Gas industry for several years, he decided to pursue his passion for technology by transitioning into Web Development with a MedTech company. In his new role, Clark discovered a new passion for helping people realize their potential to shape the future through technology. He believes that everyone has the ability to make a difference and that technology can be a powerful tool for positive change. With his unique background in both engineering and web development, Clark brings a diverse set of skills and experiences to his work. He is committed to staying up-to-date with the latest trends and developments in tech and is always looking for new ways to apply his knowledge to help others achieve their goals.",
+    },
+    {
+        name: "Daniel McCarthy",
+        imageUrl: "/images/people/Daniel_McCarthy.png",
+        title: "Product Designer - Engineering Student (PolyUnity)",
+        bio: "I am in my last year of mechanical engineering at Memorial, with a focus on biomedical engineering. I have a huge interest in additive manufacturing, healthcare, and technology, and how they interact with each other. At PolyUnity, I have developed medical simulation models for teaching procedures, designed various novel products, as well as created replacement parts to help supply staff with the parts they need to avoid supply chain issues.",
+    },
+    {
+        name: "Heather Conway",
+        imageUrl: "/images/people/Heather_Conway.png",
+        title: "Director, People & Resource Evolution (K&D Pratt Group Inc.)",
+        bio: "I believe people are THE resource that drives organizational success. For over two decades, I have translated that belief into action, leading human resource teams who deliver meaningful HR and employee relations programs to deliver desired organizational outcomes. My approach starts with understanding how the business operates (and let's be honest, how it really works is not necessarily as described in the company manual). I then engage leaders and team members at all levels and link human resource and employee relations service delivery to the business needs. From developing the people strategy for new markets and redesigning organizational structures to support service delivery that integrates acquisitions across multiple geographies, implementing new pan-organizational technologies to negotiating agreements that enable operational efficiencies, my approach has proven success – demonstrated in relevant, measurable business results.",
+    },
+    {
+        name: "Steph McIntyre",
+        imageUrl: "/images/people/Steph_McIntyre.png",
+        title: "Instructional Assistant (Memorial University of Newfoundland)",
+        bio: "Steph McIntyre sat at their computer, staring blankly at the screen. They had been asked to provide a bio for Hackfrost 2023, but they were struggling to come up with anything interesting to say. As a Full-time Instructional Assistant and Per-Course Instructor in the Computer Science department at Memorial University, Steph was used to explaining complex ideas to their students, but when it came to writing about themselves, they were at a loss.<br /><br /> After several hours of staring at the same blank page, Steph decided to try something different. They turned to a chatbot that promised to help generate content for their bio. Skeptical at first, Steph was surprised to find that the chatbot was actually quite helpful. It asked them a series of questions about their areas of interest, such as logic, databases, and photography, and used the answers to craft a unique and compelling bio.<br /><br /> Feeling relieved and grateful for the chatbot's assistance, Steph submitted the bio to the organizers of Hackfrost 2023. Although they couldn't take all the credit for the final product, Steph was proud to have found a solution to their problem and excited to see how their bio would be received by the community at the upcoming event.",
+    },
+    {
+        name: "Steve French",
+        imageUrl: "/images/people/Steve_French.png",
+        title: "Founder (Infomatix)",
+        bio: "My unique ability is to lead teams with complex problems, quickly spot the relevant patterns and issues, then identify breakthrough strategies and innovative solutions. I have worked in tech for over 30 years and have been a serial entrepreneur since I was a kid. infomatix is celebrating 20 years of success: we've helped countless entrepreneurs across the country double their business in three years or less and make them profitable from day one. We provide clarity on people, processes, technology and profitability. Our team is also part of the original cohort of Canada Digital Adoption Program (CDAP) advisors; we are helping clients access a $15,000 CDAP grant, up to $100,000 interest‑free from the BDC, plus a $7,300 hiring grant to hire a student or recent grad! Head over to <a href='https://www.infomatix.ca' target='_blank'>www.infomatix.ca</a> to find out more.<br /><br /> I'm also the co-founder of an exciting fintech startup that is a graduate of the Genesis Centre Evo programs and about to start Evo+; we've got an incredible group of advisers (know any other big fintechs in St. John's?) and we're currently looking for help with our proof of concept and MVP. Reach out on <a href='https://www.linkedin.com/in/thisisstevefrench/' target='_blank'>LinkedIn</a> if you're a full-stack, batteries-included, team player with great design and code chops and you want to make a big impact.",
+    },
+    {
+        name: "Angela Gill",
+        imageUrl: "/images/people/Angela_Gill.png",
+        title: "Product Manager (Genoa Design International)",
+        bio: "Angela Gill has a long career in the product space including local and international experience in medical device, high-tech manufacturing, information technology and primary industries. As a Product Manager at a leading 3D modelling company, Angela is known for her expertise in technology development, translating customer requirements, process improvement, and scaling of operations. With an engineering degree from Memorial University, she is passionate about leading and driving solutions within the tech sector.",
+    },
+    {
+        name: "Rahaf HajAhmad",
+        imageUrl: "/images/people/Rahaf_HajAhmad.jpg",
+        title: "Special Projects Lead (techNL)",
+        bio: "Rahaf HajAhmad is very passionate about everything that has to do with the tech ecosystem here in our province. In her current role as Special Projects Lead with techNL, Rahaf manages the techNL Student Membership Hub. Through that she aspires to support post-secondary students in finding a future in tech. She also spends part of her time managing the events and marketing team at Bounce Health innovation, and working with exciting medtech startups. Rahaf has also taken on several different roles with the Hack Frost team, working on bridging the gap between education and industry for students. She looks forward to judging in this hackathon and seeing all the different ideas that will come out of it!",
+    },
+    {
+        name: "Navid Esfahani",
+        imageUrl: "/images/people/Steve_French.png",
+        title: "Assistant Professor (Memorial University of Newfoundland)",
+        bio: "I have recently completed my PhD in computer science with the Cryptography, Security, and Privacy (CrySP) research lab at the university of Waterloo in Waterloo, Canada. My research under the supervision of Professor Stinson was focused on the applications of particular combinatorial and algebraic structures, i.e., All-or-Nothing Transforms (AONTs), in designing information-theoretically secure schemes for efficient and secure file dispersal on distributed storage systems.",
+    },
+];
+
+const mentors = [
+    {
+        name: "Al Tolentino",
+        imageUrl: "/images/people/Al_Tolentino.png",
+        title: "Founder (InQ Dev) & Security Consultant (ThirdBridge Consulting)",
+        bio: "Al recently moved to St. John's from Sydney, Australia. He has been in the tech industry for over 20 years in senior leadership roles such as Lead Developer, Engineering Management and CTO. He specializes in rescuing stalled projects and building high performance teams. Currently Al is a Security Consultant for ThirdBridge Consulting in the UK and a founder of InQ Dev, a startup that builds MVP's for pre-revenue startups.",
+    },
+    {
+        name: "Aneesh Raghupathy",
+        imageUrl: "/images/people/Aneesh_Raghupathy.png",
+        title: "CEO and Co-Founder (SmartBin)",
+        bio: "Aneesh is the founder and CEO of Smartbin, a technology company focused on providing smart waste management solutions. He is passionate about using technology to create a more sustainable future and has a background in computer science and engineering. Aneesh is driven by his desire to create innovative solutions that help reduce waste and improve efficiency in waste management processes.",
+    },
+    {
+        name: "Aidan Moores",
+        imageUrl: "/images/people/Aidan_Moores.png",
+        title: "Success Manager, Pre-Incubation (Genesis)",
+        bio: "Experienced start-up ecosystem supporter and facilitator with a demonstrated history of success. Adaptable problem solver, professional approach with a wealth of technical skills.",
+    },
+    {
+        name: "Mike Bannister",
+        imageUrl: "/images/people/Mike_Bannister.png",
+        title: "Director of Digital Government (Government of NL)",
+        bio: "Mike is currently the Director of Digital Government for the Government of NL and is passionate about fostering digital innovation in our province. Having won local and national hackathons in healthcare, Mike loves helping teams shape their ideas and helping them refine their pitches. With over 20 years experience in data and information management, Mike also loves bringing data to life - especially metadata.",
+    },
+    {
+        name: "Mitchell Hynes",
+        imageUrl: "/images/people/Mitchell_Hynes.png",
+        title: "Software Engineer (JungleScout, prev. Colab, Siftmed)",
+        bio: "Software Engineer with 5 years of experience, Coach, 2x Hackathon Winner.",
+    },
+    {
+        name: "Niraj Shukla",
+        imageUrl: "/images/people/Niraj_Shukla.png",
+        title: "Director (Springboard Atlantic)",
+    },
+    {
+        name: "Josh Taylor",
+        imageUrl: "/images/people/Josh_Taylor.png",
+        title: "Founder and CEO (TxtSquad)",
+    },
 ];
 ---
 
 <Layout title="Hack Frost NL">
-	<main>
-		<div class="gray-block">
-			<Title
-				title={"HACK FROST 3.0"}
-				startDate={"March 31"}
-				endDate={"April 2"}
-				year={"2023"}
-			/>
-			<CountdownTimer endDate="2023-08-09T14:11:00" />
-		</div>
-		<div class="black-block">
-			<Winners winners={winnersList} />
-		</div>
-		<div class="gray-block">
-			<Challenge
-				promptText={"HOW CAN WE USE TECHNOLOGY TO REDUCE THE CARBON FOOTPRINT OF INDUSTRY DELIVERIES?"}
-				resourceLinks={[
-					{
-						label: "Reducing greenhouse gas emissions from heavy-duty vehicles in Europe",
-						url: "https://www.eea.europa.eu/publications/co2-emissions-of-new-heavy",
-					},
-					{
-						label: "Fast Facts on Transportation Greenhouse Gas Emissions",
-						url: "https://www.epa.gov/greenvehicles/fast-facts-transportation-greenhouse-gas-emissions",
-					},
-					{
-						label: "Transport - Energy System - IEA",
-						url: "https://www.iea.org/topics/transport",
-					},
-					{
-						label: "Smart Freight Centre",
-						url: "https://www.smartfreightcentre.org/en/",
-					},
-				]}
-			/>
-		</div>
-		<div class="black-block">
-			<Faq />
-		</div>
-		<div class="gray-block">
-			<Sponsors sponsors={sponsors} tierOrder={tierOrder} />
-		</div>
-	</main>
-	<div class="black-block">
-		<Footer />
-	</div>
+    <main>
+        <div class="gray-block">
+            <Title
+                title={"HACK FROST 3.0"}
+                startDate={"March 31"}
+                endDate={"April 2"}
+                year={"2023"}
+            />
+            <CountdownTimer endDate="2023-08-09T14:11:00" />
+        </div>
+        <div class="black-block">
+            <Winners winners={winnersList} />
+        </div>
+        <div class="gray-block">
+            <Challenge
+                promptText={"HOW CAN WE USE TECHNOLOGY TO REDUCE THE CARBON FOOTPRINT OF INDUSTRY DELIVERIES?"}
+                resourceLinks={[
+                    {
+                        label: "Reducing greenhouse gas emissions from heavy-duty vehicles in Europe",
+                        url: "https://www.eea.europa.eu/publications/co2-emissions-of-new-heavy",
+                    },
+                    {
+                        label: "Fast Facts on Transportation Greenhouse Gas Emissions",
+                        url: "https://www.epa.gov/greenvehicles/fast-facts-transportation-greenhouse-gas-emissions",
+                    },
+                    {
+                        label: "Transport - Energy System - IEA",
+                        url: "https://www.iea.org/topics/transport",
+                    },
+                    {
+                        label: "Smart Freight Centre",
+                        url: "https://www.smartfreightcentre.org/en/",
+                    },
+                ]}
+            />
+        </div>
+        <div class="black-block">
+            <ButtonContentDisplay
+                title={"Ceremonies"}
+                items={[
+                    {
+                        title: "Opening",
+                        url: "/documents/2023/presentation-opening.pdf",
+                    },
+                    {
+                        title: "Closing",
+                        url: "/documents/2023/presentation-closing.pdf",
+                    },
+                ]}
+            />
+        </div>
+        <div class="gray-block">
+            <JudgingCriteria criteria={judgingCriteria} />
+        </div>
+        <div class="black-block">
+            <ButtonContentDisplay
+                title={"Schedule"}
+                items={[
+                    {
+                        title: "Day 1",
+                        url: "/images/schedules/2023/Schedule_Friday.png",
+                    },
+                    {
+                        title: "Day 2",
+                        url: "/images/schedules/2023/Schedule_Saturday.png",
+                    },
+                    {
+                        title: "Day 3",
+                        url: "/images/schedules/2023/Schedule_Sunday.png",
+                    },
+                ]}
+            />
+        </div>
+        <div class="gray-block">
+            <ButtonContentDisplay
+                title={"Maps"}
+                items={[
+                    {
+                        title: "Science (Level 1)",
+                        url: "/documents/2023/mun-science-plan-1.pdf",
+                    },
+                    {
+                        title: "Science (Level 2)",
+                        url: "/documents/2023/mun-science-plan-2.pdf",
+                    },
+                    {
+                        title: "Science (Level 3)",
+                        url: "/documents/2023/mun-science-plan-3.pdf",
+                    },
+                    {
+                        title: "Science (Level 4)",
+                        url: "/documents/2023/mun-science-plan-4.pdf",
+                    },
+                    {
+                        title: "Bruneau Center (Level 1)",
+                        url: "/documents/2023/mun-bruneau-plan-1.pdf",
+                    },
+                    {
+                        title: "Bruneau Center (Level 2)",
+                        url: "/documents/2023/mun-bruneau-plan-2.pdf",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="black-block">
+            <Faq extraQuestions={faqs} />
+        </div>
+        <div class="gray-block">
+            <Workshops
+                workshops={[
+                    {
+                        name: "Pitch Clinic",
+                        dateTime: "Saturday, April 1st, 3:00 - 4:00 PM",
+                        location: "IIC 2001",
+                        hosts: "Maggie Courish (Genesis)",
+                        downloadLink:
+                            "/documents/2023/Pitching_Your_Project_W23_HackFrost.pdf",
+                    },
+                    {
+                        name: "Github with Girish",
+                        dateTime: "Sunday, April 2nd, 10:00 - 11:00 AM",
+                        location: "IIC 2001",
+                        hosts: "Girish Verma",
+                    },
+                ]}
+            />
+        </div>
+        <div class="black-block">
+            <div class="center-align">
+                <h1 class="section-title">Teams</h1>
+                <iframe
+                    class="airtable-embed"
+                    src="https://airtable.com/embed/shrMrpwXPpHAo8KHo?backgroundColor=blue&layout=card"
+                    frameborder="0"
+                    width="100%"
+                    height="533"
+                    style="background: transparent; border: 1px solid #ccc;"
+                ></iframe>
+            </div>
+        </div>
+        <div class="gray-block">
+            <PeopleList peopleList={judges} title={"Judges"} />
+        </div>
+        <div class="black-block">
+            <PeopleList peopleList={mentors} title={"Mentors"} />
+        </div>
+        <div class="gray-block">
+            <Sponsors sponsors={sponsors} tierOrder={tierOrder} />
+        </div>
+    </main>
+    <div class="black-block">
+        <Footer />
+    </div>
 </Layout>
 
 <style>
-	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-	.black-block {
-		background-color: #000;
-		color: #fa524e;
-		padding: 4rem;
-		width: 100%;
-		box-sizing: border-box;
-	}
+    .black-block {
+        background-color: #000;
+        color: #fa524e;
+        padding: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-	.gray-block {
-		background-color: #272727;
-		color: #f2f4f7;
-		padding: 4rem;
-		width: 100%;
-		box-sizing: border-box;
-	}
+    .gray-block {
+        background-color: #272727;
+        color: #f2f4f7;
+        padding: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section-title {
+        font-size: 40pt;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .center-align {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 767px) {
+        .gray-block {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .black-block {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
 </style>
