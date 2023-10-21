@@ -44,33 +44,30 @@ const MenuLink = ({
     );
 };
 
-const ListItem = ({
-    children,
-    href,
-    className,
-}: {
-    children: React.ReactNode;
-    href: ToOptions["to"];
-    className?: string;
-}) => {
+const ListItem = React.forwardRef<
+    React.ElementRef<"a">,
+    React.ComponentPropsWithoutRef<"a">
+>(({ className, children, ...props }, ref) => {
     return (
         <li>
             <NavigationMenuLink asChild>
-                <Link
-                    to={href}
+                <a
+                    ref={ref}
                     className={cn(
                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-center",
                         className
                     )}
+                    {...props}
                 >
                     <div className="text-sm font-medium leading-none">
                         {children}
                     </div>
-                </Link>
+                </a>
             </NavigationMenuLink>
         </li>
     );
-};
+});
+ListItem.displayName = "ListItem";
 
 const DesktopNavbar = () => (
     <div className={"gap-1 hidden md:flex"}>
@@ -121,8 +118,7 @@ const MobileNavbar = () => (
                                     Hackathon {hackathon.title}
                                 </ListItem>
                             ))}
-                            <ListItem href={"/#about"}>About Us</ListItem>
-                            <ListItem href={"/"}>Our Team</ListItem>
+                            <ListItem href={"/team"}>Our Team</ListItem>
                             <ListItem
                                 href={"https://discord.gg/mEH3UH7hPu"}
                                 target={"_blank"}

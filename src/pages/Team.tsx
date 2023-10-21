@@ -12,6 +12,7 @@ import haley from "@/assets/images/team/haley.jpg";
 import moustafa from "@/assets/images/team/moustafa.jpg";
 
 import emad from "@/assets/images/team/emad.jpg";
+import hamdan from "@/assets/images/team/hamdan.jpg";
 
 import parsa from "@/assets/images/team/parsa.jpg";
 
@@ -190,25 +191,25 @@ const TeamPage = () => {
                             className={"object-left"}
                         />
                         <Person
-                            name={"Someone"}
+                            name={"Mahek Parmar"}
                             role={"Logistics"}
                             imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
+                            url={"https://www.linkedin.com/in/mahek-parmar-838613248/"}
                             className={"object-left"}
                         />
                         <Person
-                            name={"Someone"}
+                            name={"Raheem Madeleka"}
                             role={"Logistics"}
                             imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
+                            url={"https://www.linkedin.com/in/raheem-madeleka-953385236/"}
                             className={"object-left"}
                         />
 
                         <Person
-                            name={"Someone"}
+                            name={"Hamdan Shaikh"}
                             role={"Logistics"}
-                            imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
+                            imageUrl={hamdan}
+                            url={"https://www.linkedin.com/in/hishaikh-imti/"}
                             className={"object-left"}
                         />
                     </div>
