@@ -46,7 +46,7 @@ const HidableContent = ({
             {content.map(({ contentLink }, i) => (
                 <div
                     key={i}
-                    className={`rounded w-[100%] items-center justify-center ${
+                    className={`rounded w-[100%] items-center justify-center flex-col gap-5 ${
                         selectedContent !== contentLink ? "hidden" : "flex"
                     }`}
                 >
@@ -56,8 +56,17 @@ const HidableContent = ({
                             className={"w-[100%] h-[70vh]"}
                         />
                     ) : (
-                        <img src={contentLink} className={"max-w-[100%] lg:max-w-[600px]"} />
+                        <img
+                            src={contentLink}
+                            className={"max-w-[100%] lg:max-w-[600px]"}
+                        />
                     )}
+
+                    <Button asChild>
+                        <a href={contentLink} target="_blank" rel="noreferrer">
+                            Open in New Tab
+                        </a>
+                    </Button>
                 </div>
             ))}
         </div>

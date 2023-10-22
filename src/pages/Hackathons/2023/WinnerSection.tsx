@@ -16,7 +16,7 @@ const WinnerSection = () => (
                 <CaptionedPicture
                     key={i}
                     src={value.img}
-                    className={"max-w-[97%] lg:max-w-[700px] rounded-lg"}
+                    className={"rounded-lg max-w-[100%] lg:max-w-[30%]"}
                 >
                     <div className={"flex flex-col justify-center items-center"}>
                         <h3 className={"text-lg font-Montserrat font-bold"}>{key} Place</h3>
