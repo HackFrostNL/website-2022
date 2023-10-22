@@ -4,25 +4,19 @@ interface PersonProps {
     name: string;
     role: string;
     imageUrl: string;
-    url: string;
+    url?: string;
     className?: string;
     nameClassName?: string;
 }
 
-const Person = ({
+const PersonContent = ({
     name,
     role,
     imageUrl,
-    url,
     className,
     nameClassName,
-}: PersonProps) => (
-    <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={"flex flex-col gap-5 group justify-center items-center"}
-    >
+}: Omit<PersonProps, "url">) => (
+    <>
         <img
             src={imageUrl}
             alt={name}
@@ -42,7 +36,32 @@ const Person = ({
             </span>
             <span className={"text-center"}>{role}</span>
         </div>
-    </a>
+    </>
 );
+
+const Person = (person: PersonProps) => {
+    if (person.url) {
+        return (
+            <a
+                href={person.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={
+                    "flex flex-col gap-5 group justify-center items-center"
+                }
+            >
+                <PersonContent {...person} />
+            </a>
+        );
+    }
+
+    return (
+        <div
+            className={"flex flex-col gap-5 group justify-center items-center"}
+        >
+            <PersonContent {...person} />
+        </div>
+    );
+};
 
 export default Person;

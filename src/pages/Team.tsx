@@ -10,10 +10,11 @@ import umama from "@/assets/images/team/umama.jpg";
 import mohammad from "@/assets/images/team/mohammad.jpg";
 import erfan from "@/assets/images/team/erfan.jpg";
 import girish from "@/assets/images/team/girish.jpg";
+import noPicRed from "@/assets/images/team/noPicRed.png";
 
 import haley from "@/assets/images/team/haley.jpg";
 import moustafa from "@/assets/images/team/moustafa.jpg";
-import noPicBlue from "@/assets/images/team/noPicBlue.png";
+import craig from "@/assets/images/team/craig.jpg";
 
 import paulina from "@/assets/images/team/paulina.jpg";
 import emad from "@/assets/images/team/emad.jpg";
@@ -24,6 +25,8 @@ import noPicYellow from "@/assets/images/team/noPicYellow.png";
 import parsa from "@/assets/images/team/parsa.jpg";
 import ali from "@/assets/images/team/ali.jpg";
 import ahmed from "@/assets/images/team/ahmed.jpg";
+import muhammad from "@/assets/images/team/muhammad.jpg";
+import noPicGreen from "@/assets/images/team/noPicGreen.png";
 
 import youssef from "@/assets/images/team/youssef.jpg";
 import kamal from "@/assets/images/team/kamal.jpg";
@@ -123,19 +126,17 @@ const TeamPage = () => {
                         />
 
                         <Person
-                            name={"Someone"}
+                            name={"Andrew Ross"}
                             role={"Operations"}
-                            imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
+                            imageUrl={noPicRed}
                             className={"object-left"}
                             nameClassName={"group-hover:text-brand-red"}
                         />
 
                         <Person
-                            name={"Someone"}
+                            name={"Michael Babalola"}
                             role={"Operations"}
-                            imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
+                            imageUrl={noPicRed}
                             className={"object-left"}
                             nameClassName={"group-hover:text-brand-red"}
                         />
@@ -173,10 +174,8 @@ const TeamPage = () => {
                         <Person
                             name={"Craig Moulton"}
                             role={"Marketing"}
-                            imageUrl={noPicBlue}
-                            url={
-                                "https://www.linkedin.com/in/craig-moulton-verified/"
-                            }
+                            imageUrl={craig}
+                            url={"https://b2bold.ca/"}
                             className={"object-left"}
                             nameClassName={"group-hover:text-brand-blue"}
                         />
@@ -200,7 +199,6 @@ const TeamPage = () => {
                             role={"Logistics Lead"}
                             imageUrl={paulina}
                             url={"https://www.linkedin.com/in/paulina-al/"}
-                            className={"object-left"}
                             nameClassName={"group-hover:text-brand-yellow"}
                         />
                         <Person
@@ -284,26 +282,24 @@ const TeamPage = () => {
                             nameClassName={"group-hover:text-brand-green"}
                         />
                         <Person
-                            name={"Someone"}
-                            role={"Sponsorship"}
-                            imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
-                            className={"object-left"}
-                            nameClassName={"group-hover:text-brand-green"}
-                        />
-                        <Person
                             name={"Muhammad Usman"}
                             role={"Sponsorship"}
-                            imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
-                            className={"object-left"}
+                            imageUrl={muhammad}
+                            url={"http://linkedin.com/in/usman12529"}
                             nameClassName={"group-hover:text-brand-green"}
                         />
                         <Person
-                            name={"Someone"}
+                            name={"Tasneem Tabannum"}
                             role={"Sponsorship"}
-                            imageUrl={"https://via.placeholder.com/256"}
-                            url={"https://example.com"}
+                            imageUrl={noPicGreen}
+                            className={"object-left"}
+                            nameClassName={"group-hover:text-brand-green"}
+                        />
+
+                        <Person
+                            name={"Erfan Tajalli"}
+                            role={"Sponsorship"}
+                            imageUrl={noPicGreen}
                             className={"object-left"}
                             nameClassName={"group-hover:text-brand-green"}
                         />
