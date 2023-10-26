@@ -4,6 +4,7 @@ import AboutUsSection from "./AboutUsSection";
 import { Separator } from "@/components/ui/separator";
 import FaqSection from "./FaqSection";
 import SponsorSection from "@/pages/Hackathons/2023/SponsorSection";
+import { Link } from "@tanstack/react-router";
 
 const Home = () => {
     return (
@@ -13,8 +14,8 @@ const Home = () => {
             }
         >
             <Hero title={"Hack Frost NL"}>
-                <Button className="text-xl h-[50px]">
-                    View our Last Event
+                <Button asChild>
+                    <Link to={"/hackathons/2023"} className="text-xl h-[50px]">View Our Last Event</Link>
                 </Button>
             </Hero>
             <AboutUsSection />
