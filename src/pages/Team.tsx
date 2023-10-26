@@ -10,6 +10,7 @@ import umama from "@/assets/images/team/umama.jpg";
 import mohammad from "@/assets/images/team/mohammad.jpg";
 import erfan from "@/assets/images/team/erfan.jpg";
 import girish from "@/assets/images/team/girish.jpg";
+import michael from "@/assets/images/team/michael.jpg";
 import noPicRed from "@/assets/images/team/noPicRed.png";
 
 import haley from "@/assets/images/team/haley.jpg";
@@ -124,17 +125,15 @@ const TeamPage = () => {
                             className={"object-left"}
                             nameClassName={"group-hover:text-brand-red"}
                         />
-
-                        <Person
-                            name={"Andrew Ross"}
-                            role={"Operations"}
-                            imageUrl={noPicRed}
-                            className={"object-left"}
-                            nameClassName={"group-hover:text-brand-red"}
-                        />
-
                         <Person
                             name={"Michael Babalola"}
+                            role={"Operations"}
+                            imageUrl={michael}
+                            url={"https://www.linkedin.com/in/babalola-michael/"}
+                            nameClassName={"group-hover:text-brand-red"}
+                        />
+                        <Person
+                            name={"Andrew Ross"}
                             role={"Operations"}
                             imageUrl={noPicRed}
                             className={"object-left"}
