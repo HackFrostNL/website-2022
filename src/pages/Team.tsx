@@ -21,7 +21,7 @@ import paulina from "@/assets/images/team/paulina.jpg";
 import emad from "@/assets/images/team/emad.jpg";
 import hamdan from "@/assets/images/team/hamdan.jpg";
 import raheem from "@/assets/images/team/raheem.jpg";
-import noPicYellow from "@/assets/images/team/noPicYellow.png";
+import mahek from "@/assets/images/team/mahek.png";
 
 import parsa from "@/assets/images/team/parsa.jpg";
 import ali from "@/assets/images/team/ali.jpg";
@@ -230,11 +230,10 @@ const TeamPage = () => {
                         <Person
                             name={"Mahek Parmar"}
                             role={"Logistics"}
-                            imageUrl={noPicYellow}
+                            imageUrl={mahek}
                             url={
                                 "https://www.linkedin.com/in/mahek-parmar-838613248/"
                             }
-                            className={"object-left"}
                             nameClassName={"group-hover:text-brand-yellow"}
                         />
                     </div>
