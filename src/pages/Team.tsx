@@ -294,14 +294,6 @@ const TeamPage = () => {
                             className={"object-left"}
                             nameClassName={"group-hover:text-brand-green"}
                         />
-
-                        <Person
-                            name={"Erfan Tajalli"}
-                            role={"Sponsorship"}
-                            imageUrl={noPicGreen}
-                            className={"object-left"}
-                            nameClassName={"group-hover:text-brand-green"}
-                        />
                     </div>
                 </Team>
                 <Team>
