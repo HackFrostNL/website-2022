@@ -27,7 +27,7 @@ const questions = [
     },
     {
         question: "When and where?",
-        answer: "The time and location of Hack Frost 4.0 are not announced yet. Stay tuned!",
+        answer: "Hack Frost 4.0 will be held in the whale atrium at the MUN Core Sciences Facility from February 16th to 18th, 2024. ",
     },
     {
         question: "What happens in a hackathon?",
@@ -92,7 +92,7 @@ const questions = [
     },
     {
         question: "What about the prizes?",
-        answer: "The prizes for Hack Frost 4.0 are not announced yet, however up to $6000 was given to the top 3 teams in Hack Frost 3.0.",
+        answer: "Yes, there will be prizes! We'll be announcing them soon, so stay tuned!",
     },
     {
         question: "Would I get swag and merchandise?",
