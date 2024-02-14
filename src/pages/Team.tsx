@@ -2,9 +2,7 @@ import Hero from "@/components/Hero/Hero";
 import Person from "@/components/Team/Person";
 import Team from "@/components/Team/Team";
 
-import madison from "@/assets/images/team/madison.jpg";
 import william from "@/assets/images/team/william.jpg";
-import rahaf from "@/assets/images/team/rahaf.jpg";
 
 import umama from "@/assets/images/team/umama.jpg";
 import mohammad from "@/assets/images/team/mohammad.jpg";
@@ -56,26 +54,11 @@ const TeamPage = () => {
                         }
                     >
                         <Person
-                            name={"Madison Emshey"}
-                            role={"President"}
-                            imageUrl={madison}
-                            url={"https://www.linkedin.com/in/madison-emshey"}
-                            className={"object-left"}
-                        />
-                        <Person
                             name={"William Church"}
-                            role={"Vice-President"}
+                            role={"President"}
                             imageUrl={william}
                             url={"https://www.linkedin.com/in/church-william"}
                             className={"object-left"}
-                        />
-                        <Person
-                            name={"Rahaf HajAhmad"}
-                            role={"Project Manager"}
-                            imageUrl={rahaf}
-                            url={
-                                "https://www.linkedin.com/in/rahaf-hajahmad-5b9a311a7"
-                            }
                         />
                     </div>
                 </Team>
