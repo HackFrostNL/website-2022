@@ -34,7 +34,14 @@ const questions = [
                 </p>
                 <p>
                     We are partnering with the{" "}
-                    <a href="https://genesis-centre.ca/" target={"_blank"} rel={"noopener noreferrer"} className={"text-primary hover:underline"}>Genesis Center</a>{" "}
+                    <a
+                        href="https://genesis-centre.ca/"
+                        target={"_blank"}
+                        rel={"noopener noreferrer"}
+                        className={"text-primary hover:underline"}
+                    >
+                        Genesis Center
+                    </a>{" "}
                     this year, and we will be having the hackathon in-person at
                     Memorial University in the Bruneau Centre for Research and
                     Innovation (IIC) and the Science Building.{" "}

@@ -4,6 +4,9 @@ import AboutUsSection from "./AboutUsSection";
 import { Separator } from "@/components/ui/separator";
 import FaqSection from "./FaqSection";
 import SponsorSection from "@/pages/Hackathons/2023/SponsorSection";
+import HidableContent from "@/components/HidableContent/HidableContent";
+import { ceremonies } from "./data";
+import Challenge from "./Challenge";
 
 const Home = () => {
     return (
@@ -22,7 +25,9 @@ const Home = () => {
                     </div>
                     <Button asChild>
                         <a
-                            href={"https://www.eventbrite.com/e/hack-frost-nl-40-tickets-803510711167?aff=website"}
+                            href={
+                                "https://www.eventbrite.com/e/hack-frost-nl-40-tickets-803510711167?aff=website"
+                            }
                             className="text-xl h-[50px]"
                         >
                             Register Now
@@ -30,6 +35,10 @@ const Home = () => {
                     </Button>
                 </div>
             </Hero>
+            <Challenge />
+            <Separator />
+            <HidableContent title={"Ceremonies"} content={ceremonies} />
+            <Separator />
             <AboutUsSection />
             <Separator />
             <FaqSection />

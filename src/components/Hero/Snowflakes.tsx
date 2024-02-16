@@ -19,10 +19,26 @@ const Snowflake = React.forwardRef<
 
 const Snowflakes = () => (
     <div className={"flex flex-row gap-5"}>
-        <Snowflake className={"fill-brand-red animate-bounce duration-1000 delay-100 ease-linear"} />
-        <Snowflake className={"fill-brand-blue animate-bounce duration-1000 delay-300 ease-linear"} />
-        <Snowflake className={"fill-brand-yellow animate-bounce duration-1000 delay-500 ease-linear"} />
-        <Snowflake className={"fill-brand-green animate-bounce duration-1000 delay-700 ease-linear"} />
+        <Snowflake
+            className={
+                "fill-brand-red animate-bounce duration-1000 delay-100 ease-linear"
+            }
+        />
+        <Snowflake
+            className={
+                "fill-brand-blue animate-bounce duration-1000 delay-300 ease-linear"
+            }
+        />
+        <Snowflake
+            className={
+                "fill-brand-yellow animate-bounce duration-1000 delay-500 ease-linear"
+            }
+        />
+        <Snowflake
+            className={
+                "fill-brand-green animate-bounce duration-1000 delay-700 ease-linear"
+            }
+        />
     </div>
 );
 

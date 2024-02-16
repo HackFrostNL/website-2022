@@ -19,8 +19,16 @@ const Person = ({ name, imageUrl, title, bio }: PersonProps) => (
         />
         <div className={"flex flex-col gap-2 p-2"}>
             <div className={"flex flex-col"}>
-                <h3 className={"text-xl font-Montserrat font-bold text-center md:text-left"}>{name}</h3>
-                <h4 className={"text-lg text-primary text-center md:text-left"}>{title}</h4>
+                <h3
+                    className={
+                        "text-xl font-Montserrat font-bold text-center md:text-left"
+                    }
+                >
+                    {name}
+                </h3>
+                <h4 className={"text-lg text-primary text-center md:text-left"}>
+                    {title}
+                </h4>
             </div>
             {bio && <p dangerouslySetInnerHTML={{ __html: bio }} />}
         </div>

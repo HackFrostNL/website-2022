@@ -12,7 +12,11 @@ import schlumberger from "@/assets/images/sponsors/schlumberger.png";
 import aker from "@/assets/images/sponsors/aker.png";
 
 const SponsorSection = () => (
-    <div className={"flex flex-col gap-5 w-[100%] lg:w-[90%] justify-center items-center"}>
+    <div
+        className={
+            "flex flex-col gap-5 w-[100%] lg:w-[90%] justify-center items-center"
+        }
+    >
         <h2
             className={
                 "text-primary text-3xl font-josefin text-center lg:text-left"

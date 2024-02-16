@@ -112,7 +112,9 @@ const TeamPage = () => {
                             name={"Michael Babalola"}
                             role={"Operations"}
                             imageUrl={michael}
-                            url={"https://www.linkedin.com/in/babalola-michael/"}
+                            url={
+                                "https://www.linkedin.com/in/babalola-michael/"
+                            }
                             nameClassName={"group-hover:text-brand-red"}
                         />
                         <Person
@@ -273,7 +275,9 @@ const TeamPage = () => {
                             name={"Tasneem Tabannum"}
                             role={"Sponsorship"}
                             imageUrl={noPicGreen}
-                            url={"https://www.linkedin.com/in/tasneem-tabannum-087704267/"}
+                            url={
+                                "https://www.linkedin.com/in/tasneem-tabannum-087704267/"
+                            }
                             className={"object-left"}
                             nameClassName={"group-hover:text-brand-green"}
                         />

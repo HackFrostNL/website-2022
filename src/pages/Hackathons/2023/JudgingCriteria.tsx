@@ -30,7 +30,7 @@ const JudgingCriteriaSection = () => (
             </TableHeader>
             <TableBody>
                 <TableRow>
-                    <TableCell >Feasibility</TableCell>
+                    <TableCell>Feasibility</TableCell>
                     <TableCell>
                         The team has clearly identified a problem related to the
                         prompt
@@ -38,7 +38,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">15</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >Feasibility</TableCell>
+                    <TableCell>Feasibility</TableCell>
                     <TableCell>
                         The team has clearly described a solution that utilizes
                         technology to address the problem
@@ -46,7 +46,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">15</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >Feasibility</TableCell>
+                    <TableCell>Feasibility</TableCell>
                     <TableCell>
                         The proposed solution has the potential for deployment
                         and scaleability
@@ -54,9 +54,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">10</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >
-                        Creativity/Design
-                    </TableCell>
+                    <TableCell>Creativity/Design</TableCell>
                     <TableCell>
                         The solution shows creativity and introduces a new
                         “approach” to offsetting carbon emissions
@@ -64,9 +62,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">15</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >
-                        Creativity/Design
-                    </TableCell>
+                    <TableCell>Creativity/Design</TableCell>
                     <TableCell>
                         The solution takes into consideration both environmental
                         impact and the well-being of staff involved in the
@@ -75,9 +71,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">10</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >
-                        Creativity/Design
-                    </TableCell>
+                    <TableCell>Creativity/Design</TableCell>
                     <TableCell>
                         If implemented successfully, this would significantly
                         impact carbon emissions
@@ -85,7 +79,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">10</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >Presentation</TableCell>
+                    <TableCell>Presentation</TableCell>
                     <TableCell>
                         The presentation is clear, concise, on time and provides
                         evidence for decisions
@@ -101,7 +95,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">5</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >Presentation</TableCell>
+                    <TableCell>Presentation</TableCell>
                     <TableCell>
                         There is evidence of teamwork and leveraging the
                         strengths of the whole team
@@ -109,7 +103,7 @@ const JudgingCriteriaSection = () => (
                     <TableCell className="text-right">5</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell >Presentation</TableCell>
+                    <TableCell>Presentation</TableCell>
                     <TableCell>The team responded well to questions</TableCell>
                     <TableCell className="text-right">5</TableCell>
                 </TableRow>
