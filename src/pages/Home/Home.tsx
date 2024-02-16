@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import FaqSection from "./FaqSection";
 import SponsorSection from "@/pages/Hackathons/2023/SponsorSection";
 import HidableContent from "@/components/HidableContent/HidableContent";
-import { ceremonies } from "./data";
+import { ceremonies, schedule } from "./data";
 import Challenge from "./Challenge";
 
 const Home = () => {
@@ -38,6 +38,8 @@ const Home = () => {
             <Challenge />
             <Separator />
             <HidableContent title={"Ceremonies"} content={ceremonies} />
+            <Separator />
+            <HidableContent title={"Schedule"} content={schedule} />
             <Separator />
             <AboutUsSection />
             <Separator />

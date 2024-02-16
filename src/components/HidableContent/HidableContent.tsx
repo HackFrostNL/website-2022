@@ -58,7 +58,7 @@ const HidableContent = ({
                     ) : (
                         <img
                             src={contentLink}
-                            className={"max-w-[100%] lg:max-w-[600px]"}
+                            className={"max-w-[100%] lg:max-w-[900px]"}
                         />
                     )}
 
