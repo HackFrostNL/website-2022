@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import AboutUsSection from "./AboutUsSection";
 import { Separator } from "@/components/ui/separator";
 import FaqSection from "./FaqSection";
-import SponsorSection from "@/pages/Hackathons/2023/SponsorSection";
+import SponsorSection from "./SponsorSection";
 import HidableContent from "@/components/HidableContent/HidableContent";
 import { ceremonies, schedule } from "./data";
 import Challenge from "./Challenge";
+import JudgingCriteriaSection from "./JudgingCriteria";
 
 const Home = () => {
     return (
@@ -38,6 +39,8 @@ const Home = () => {
             <Challenge />
             <Separator />
             <HidableContent title={"Ceremonies"} content={ceremonies} />
+            <Separator />
+            <JudgingCriteriaSection />
             <Separator />
             <HidableContent title={"Schedule"} content={schedule} />
             <Separator />
