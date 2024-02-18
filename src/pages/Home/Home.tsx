@@ -38,6 +38,30 @@ const Home = () => {
             </Hero>
             <Challenge />
             <Separator />
+            <div
+                className={
+                    "flex flex-col items-center justify-center gap-10 w-[100%] px-4 lg:px-10"
+                }
+            >
+                <div className="flex flex-col items-center justify-center gap-4">
+                    <span className="text-3xl font-josefin text-primary">
+                        Submission Form
+                    </span>
+                    <a
+                        href={
+                            "https://docs.google.com/forms/d/1a5lZ3L0n-jCPSl2EOJCwT9y9BoW-hhK0hQl48iEtgCg/viewform"
+                        }
+                        target="_blank"
+                        className={
+                            "text-lg text-center hover:underline"
+                        }
+                        rel="noopener noreferrer"
+                    >
+                        Submit your pitch deck here
+                    </a>
+                </div>
+            </div>
+            <Separator />
             <HidableContent title={"Ceremonies"} content={ceremonies} />
             <Separator />
             <JudgingCriteriaSection />
