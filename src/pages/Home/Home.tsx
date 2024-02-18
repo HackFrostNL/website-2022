@@ -47,18 +47,18 @@ const Home = () => {
                     <span className="text-3xl font-josefin text-primary">
                         Submission Form
                     </span>
-                    <a
-                        href={
-                            "https://docs.google.com/forms/d/1a5lZ3L0n-jCPSl2EOJCwT9y9BoW-hhK0hQl48iEtgCg/viewform"
-                        }
-                        target="_blank"
-                        className={
-                            "text-lg text-center hover:underline"
-                        }
-                        rel="noopener noreferrer"
-                    >
-                        Submit your pitch deck here
-                    </a>
+                    <Button asChild>
+                        <a
+                            href={
+                                "https://docs.google.com/forms/d/1a5lZ3L0n-jCPSl2EOJCwT9y9BoW-hhK0hQl48iEtgCg/viewform"
+                            }
+                            target="_blank"
+                            className={"text-lg text-center hover:underline"}
+                            rel="noopener noreferrer"
+                        >
+                            Submit Pitch Deck
+                        </a>
+                    </Button>
                 </div>
             </div>
             <Separator />
