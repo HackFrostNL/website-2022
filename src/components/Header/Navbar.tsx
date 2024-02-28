@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { DiscordLogoIcon } from "@radix-ui/react-icons";
+import { IoIosMail } from "react-icons/io";
 
 const hackathons: { title: string; href: string }[] = [
     {
@@ -70,7 +71,7 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 const DesktopNavbar = () => (
-    <div className={"gap-1 hidden md:flex"}>
+    <div className={"gap-5 hidden md:flex"}>
         <NavigationMenu>
             <NavigationMenuList>
                 <NavigationMenuItem>
@@ -93,12 +94,20 @@ const DesktopNavbar = () => (
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
-        <Button asChild>
-            <a href={"https://discord.gg/mEH3UH7hPu"} target={"_blank"}>
-                <DiscordLogoIcon className="mr-2 h-5 w-5" />
-                Discord
-            </a>
-        </Button>
+        <div className={"flex flex-row gap-2"}>
+            <Button asChild>
+                <a href={"https://discord.gg/mEH3UH7hPu"} target={"_blank"}>
+                    <DiscordLogoIcon className="mr-2 h-5 w-5" />
+                    Discord
+                </a>
+            </Button>
+            <Button asChild>
+                <Link to={"contact"}>
+                    <IoIosMail className="mr-2 h-6 w-6" />
+                    Contact Us
+                </Link>
+            </Button>
+        </div>
     </div>
 );
 
@@ -125,6 +134,7 @@ const MobileNavbar = () => (
                             >
                                 Discord
                             </ListItem>
+                            <ListItem href={"contact"}>Contact Us</ListItem>
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>

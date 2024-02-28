@@ -21,7 +21,7 @@ const SponsorSection = () => (
         </h2>
         <div className={"flex flex-col gap-5"}>
             <SponsorBlock title={""}>
-            <Sponsor
+                <Sponsor
                     name={"College of the North Atlantic"}
                     imageUrl={cna}
                     url={"https://www.cna.nl.ca/"}
