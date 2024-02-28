@@ -102,7 +102,7 @@ const DesktopNavbar = () => (
                 </a>
             </Button>
             <Button asChild>
-                <Link to={"contact"}>
+                <Link to={"/contact"}>
                     <IoIosMail className="mr-2 h-6 w-6" />
                     Contact Us
                 </Link>
@@ -134,7 +134,7 @@ const MobileNavbar = () => (
                             >
                                 Discord
                             </ListItem>
-                            <ListItem href={"contact"}>Contact Us</ListItem>
+                            <ListItem href={"/contact"}>Contact Us</ListItem>
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
